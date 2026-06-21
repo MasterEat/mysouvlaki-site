@@ -214,35 +214,63 @@
 <div class="bg-surface-cream border border-outline-variant p-gutter rounded-xl shadow-sm relative overflow-hidden">
 <!-- Subtle background decoration -->
 <div class="absolute top-0 right-0 w-32 h-32 bg-gold-muted/5 rounded-full -mr-16 -mt-16"></div>
-<form class="relative z-10 flex flex-col gap-6">
+<div data-fs-success role="status" aria-live="polite" class="hidden relative z-10 mb-6 rounded-lg border border-data-success/40 bg-data-success/10 p-4 font-body-md text-body-md text-petrol-dark" data-i18n="contact.form.success">Το μήνυμά σας στάλθηκε επιτυχώς. Θα επικοινωνήσουμε μαζί σας το συντομότερο δυνατό.</div>
+<div data-fs-error role="alert" aria-live="assertive" class="hidden relative z-10 mb-6 rounded-lg border border-data-alert/40 bg-data-alert/10 p-4 font-body-md text-body-md text-on-error-container" data-i18n="contact.form.error">Δεν ήταν δυνατή η αποστολή του μηνύματος. Ελέγξτε τα πεδία και δοκιμάστε ξανά.</div>
+<form id="contact-form" action="https://formspree.io/f/mdarnrpr" method="POST" class="relative z-10 flex flex-col gap-6">
+<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" class="hidden"/>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <!-- Name Field -->
 <div class="flex flex-col gap-2">
-<label class="font-label-caps text-label-caps text-petrol-dark flex justify-between" for="name">ΟΝΟΜΑΤΕΠΩΝΥΜΟ</label>
-<input class="ledger-input bg-surface border border-outline-variant rounded-lg p-4 font-body-md text-body-md focus:ring-0 transition-all" id="name" name="name" placeholder="Ιωάννης Παπαδόπουλος" type="text"/>
+<label class="font-label-caps text-label-caps text-petrol-dark flex justify-between" for="name" data-i18n="contact.form.name.label">Ονοματεπώνυμο</label>
+<input class="ledger-input bg-surface border border-outline-variant rounded-lg p-4 font-body-md text-body-md focus:ring-0 transition-all" id="name" name="name" placeholder="Ιωάννης Παπαδόπουλος" data-i18n-placeholder="contact.form.name.placeholder" type="text" required autocomplete="name" data-fs-field aria-describedby="name-error"/>
+<span id="name-error" data-fs-error="name" class="min-h-5 font-body-sm text-body-sm text-data-alert" aria-live="polite"></span>
 </div>
 <!-- Email Field -->
 <div class="flex flex-col gap-2">
-<label class="font-label-caps text-label-caps text-petrol-dark flex justify-between" for="email">EMAIL</label>
-<input class="ledger-input bg-surface border border-outline-variant rounded-lg p-4 font-body-md text-body-md focus:ring-0 transition-all" id="email" name="email" placeholder="email@example.com" type="email"/>
+<label class="font-label-caps text-label-caps text-petrol-dark flex justify-between" for="email" data-i18n="contact.form.email.label">EMAIL</label>
+<input class="ledger-input bg-surface border border-outline-variant rounded-lg p-4 font-body-md text-body-md focus:ring-0 transition-all" id="email" name="email" placeholder="email@example.com" data-i18n-placeholder="contact.form.email.placeholder" type="email" required autocomplete="email" inputmode="email" data-fs-field aria-describedby="email-error"/>
+<span id="email-error" data-fs-error="email" class="min-h-5 font-body-sm text-body-sm text-data-alert" aria-live="polite"></span>
+</div>
+<!-- Phone Field -->
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-label-caps text-petrol-dark flex justify-between" for="phone" data-i18n="contact.form.phone.label">Τηλέφωνο — προαιρετικό</label>
+<input class="ledger-input bg-surface border border-outline-variant rounded-lg p-4 font-body-md text-body-md focus:ring-0 transition-all" id="phone" name="phone" placeholder="+30 210 000 0000" data-i18n-placeholder="contact.form.phone.placeholder" type="tel" autocomplete="tel" inputmode="tel" data-fs-field aria-describedby="phone-error"/>
+<span id="phone-error" data-fs-error="phone" class="min-h-5 font-body-sm text-body-sm text-data-alert" aria-live="polite"></span>
+</div>
+<!-- Subject Field -->
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-label-caps text-petrol-dark flex justify-between" for="subject" data-i18n="contact.form.subject.label">Θέμα επικοινωνίας</label>
+<select class="ledger-input bg-surface border border-outline-variant rounded-lg p-4 font-body-md text-body-md focus:ring-0 transition-all" id="subject" name="subject" required data-fs-field aria-describedby="subject-error">
+<option value="" disabled selected data-i18n="contact.form.subject.placeholder">Επιλέξτε θέμα</option>
+<option value="costing-food-cost" data-i18n="contact.form.subject.costing">Κοστολόγηση και Food Cost</option>
+<option value="profitability-organization" data-i18n="contact.form.subject.profitability">Κερδοφορία και οργάνωση</option>
+<option value="partnership" data-i18n="contact.form.subject.partnership">Συνεργασία</option>
+<option value="website-technical-issue" data-i18n="contact.form.subject.technical">Τεχνικό θέμα ιστοσελίδας</option>
+<option value="other" data-i18n="contact.form.subject.other">Άλλο</option>
+</select>
+<span id="subject-error" data-fs-error="subject" class="min-h-5 font-body-sm text-body-sm text-data-alert" aria-live="polite"></span>
 </div>
 </div>
 <!-- Message Field -->
 <div class="flex flex-col gap-2">
-<label class="font-label-caps text-label-caps text-petrol-dark flex justify-between" for="message">ΤΟ ΜΗΝΥΜΑ ΣΑΣ</label>
-<textarea class="ledger-input bg-surface border border-outline-variant rounded-lg p-4 font-body-md text-body-md focus:ring-0 transition-all resize-none" id="message" name="message" placeholder="Περιγράψτε το αίτημά σας..." rows="5"></textarea>
+<label class="font-label-caps text-label-caps text-petrol-dark flex justify-between" for="message" data-i18n="contact.form.message.label">Το μήνυμά σας</label>
+<textarea class="ledger-input bg-surface border border-outline-variant rounded-lg p-4 font-body-md text-body-md focus:ring-0 transition-all resize-none" id="message" name="message" placeholder="Περιγράψτε σύντομα πώς μπορούμε να σας βοηθήσουμε." data-i18n-placeholder="contact.form.message.placeholder" required rows="6" data-fs-field aria-describedby="message-error"></textarea>
+<span id="message-error" data-fs-error="message" class="min-h-5 font-body-sm text-body-sm text-data-alert" aria-live="polite"></span>
+</div>
+<!-- Privacy Consent -->
+<div class="flex flex-col gap-2">
+<label class="flex items-start gap-3 rounded-lg border border-outline-variant bg-surface p-4 font-body-md text-body-md text-petrol-dark" for="privacy-consent">
+<input class="mt-1 rounded border-outline-variant text-petrol-dark focus:ring-gold-muted" id="privacy-consent" name="privacy_consent" value="accepted" type="checkbox" required data-fs-field aria-describedby="privacy-consent-error"/>
+<span data-i18n="contact.form.privacy.label">Συμφωνώ να χρησιμοποιηθούν τα στοιχεία μου αποκλειστικά για την απάντηση στο αίτημά μου.</span>
+</label>
+<span id="privacy-consent-error" data-fs-error="privacy_consent" class="min-h-5 font-body-sm text-body-sm text-data-alert" aria-live="polite"></span>
 </div>
 <!-- Submit Button -->
-<button class="bg-petrol-dark text-surface-cream font-headline-md text-headline-md py-4 rounded-lg hover:opacity-90 transition-opacity active:scale-[0.98] flex items-center justify-center gap-3" type="submit">
-                            ΑΠΟΣΤΟΛΗ
+<button class="bg-petrol-dark text-surface-cream font-headline-md text-headline-md py-4 rounded-lg hover:opacity-90 transition-opacity active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed disabled:active:scale-100 flex items-center justify-center gap-3" type="submit" data-fs-submit-btn data-i18n="contact.form.submit" data-fs-loading-text-el="Αποστολή..." data-fs-loading-text-en="Sending...">
+                            Αποστολή μηνύματος
                             <span class="material-symbols-outlined" data-icon="send">send</span>
 </button>
 </form>
-</div>
-<!-- Success indicator chip -->
-<div class="mt-base flex items-center gap-2">
-<div class="w-2 h-2 rounded-full bg-data-success"></div>
-<span class="font-label-caps text-label-caps text-data-success uppercase">Ενεργή κρυπτογράφηση: ασφαλής μετάδοση δεδομένων</span>
 </div>
 </div>
 </div>
@@ -306,4 +334,34 @@
         drawerClose.addEventListener('click', closeDrawer);
         overlay.addEventListener('click', closeDrawer);
     </script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('#contact-form');
+    if (!form) return;
+    form.querySelectorAll('[data-fs-field]').forEach((field) => {
+      const syncValidity = () => field.setAttribute('aria-invalid', String(!field.validity.valid));
+      field.addEventListener('invalid', syncValidity);
+      field.addEventListener('input', syncValidity);
+      field.addEventListener('change', syncValidity);
+      field.setAttribute('aria-invalid', 'false');
+    });
+  });
+</script>
+<script>
+  window.formspree =
+    window.formspree ||
+    function () {
+      (formspree.q = formspree.q || []).push(arguments);
+    };
+
+  formspree('initForm', {
+    formElement: '#contact-form',
+    formId: 'mdarnrpr',
+    data: {
+      source: 'mysouvlaki-contact-page',
+      language: () => document.documentElement.lang || 'el'
+    }
+  });
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body></html>
