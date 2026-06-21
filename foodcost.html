@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 
-<html lang="en"><head>
+<html lang="el"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Food Cost Analysis | mysouvlaki.gr</title>
+<meta name="description" content="Food cost, ανάλυση κόστους και κερδοφορίας για σύγχρονα σουβλατζίδικα."/>
+<title>Food Cost για σουβλατζίδικα | mysouvlaki</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -129,6 +130,8 @@
       min-height: max(884px, 100dvh);
     }
   </style>
+<style>.language-switch button{cursor:pointer}.language-switch button.active{background:#042B33;color:#F7F4EC;font-weight:700}.language-switch button:focus-visible{outline:2px solid #C2B391;outline-offset:2px}</style>
+<script src="assets/js/i18n.js" defer></script>
 </head>
 <body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
 <!-- TopAppBar -->
@@ -137,14 +140,14 @@
 <img alt="mysouvlaki logo" class="h-12 md:h-16 w-auto object-contain" src="assets/logo/logo.webp"/>
 </a>
 <nav class="hidden md:flex gap-8">
-<a class="font-body-md text-on-surface-variant hover:text-text-main transition-colors" href="index.html">Home</a>
-<a class="font-body-md text-on-surface-variant hover:text-text-main transition-colors" href="about.html">About</a>
-<a class="font-body-md text-text-main border-b-2 border-gold-muted pb-1" href="foodcost.html">Food Cost</a>
-<a class="font-body-md text-on-surface-variant hover:text-text-main transition-colors" href="blog.html">Blog</a>
-<a class="font-body-md text-on-surface-variant hover:text-text-main transition-colors" href="contact.html">Contact</a>
+<a data-i18n="nav.home" class="font-body-md text-on-surface-variant hover:text-text-main transition-colors" href="index.html">Αρχική</a>
+<a data-i18n="nav.about" class="font-body-md text-on-surface-variant hover:text-text-main transition-colors" href="about.html">Σχετικά</a>
+<a data-i18n="nav.foodCost" class="font-body-md text-text-main border-b-2 border-gold-muted pb-1" href="foodcost.html">Food Cost</a>
+<a data-i18n="nav.blog" class="font-body-md text-on-surface-variant hover:text-text-main transition-colors" href="blog.html">Blog</a>
+<a data-i18n="nav.contact" class="font-body-md text-on-surface-variant hover:text-text-main transition-colors" href="contact.html">Επικοινωνία</a>
 </nav>
 <div class="flex items-center gap-4">
-<button class="font-label-caps text-label-caps text-petrol-dark border border-petrol-dark px-3 py-1 rounded-lg uppercase tracking-widest">EN/GR</button>
+<div class="language-switch font-label-caps text-label-caps text-petrol-dark border border-petrol-dark/20 rounded-full overflow-hidden" role="group" aria-label="Language selection"><button type="button" data-lang="el" aria-label="Switch language to Greek" aria-pressed="true" class="px-3 py-1 cursor-pointer font-bold">GR</button><button type="button" data-lang="en" aria-label="Switch language to English" aria-pressed="false" class="px-3 py-1 cursor-pointer">EN</button></div>
 <button class="md:hidden text-petrol-dark" id="menuBtn">
 <span class="material-symbols-outlined">menu</span>
 </button>
@@ -153,22 +156,22 @@
 <!-- Navigation Drawer (Mobile) -->
 <div class="fixed inset-y-0 left-0 z-50 transform -translate-x-full w-72 bg-surface-cream shadow-xl transition-transform duration-300 ease-in-out md:hidden" id="drawer">
 <div class="p-6">
-<h2 class="font-headline-md text-headline-md text-petrol-dark mb-8">Menu</h2>
+<h2 class="font-headline-md text-headline-md text-petrol-dark mb-8">Μενού</h2>
 <nav class="flex flex-col gap-2">
-<a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-colors" href="index.html">
-<span class="material-symbols-outlined">home</span> Home
+<a data-i18n="nav.home" class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-colors" href="index.html">
+<span class="material-symbols-outlined">home</span> Αρχική
                 </a>
-<a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-colors" href="about.html">
-<span class="material-symbols-outlined">info</span> About
+<a data-i18n="nav.about" class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-colors" href="about.html">
+<span class="material-symbols-outlined">info</span> Σχετικά
                 </a>
-<a class="flex items-center gap-4 px-4 py-3 bg-secondary-container text-on-secondary-container rounded-lg" href="foodcost.html">
+<a data-i18n="nav.foodCost" class="flex items-center gap-4 px-4 py-3 bg-secondary-container text-on-secondary-container rounded-lg" href="foodcost.html">
 <span class="material-symbols-outlined">payments</span> Food Cost
                 </a>
-<a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-colors" href="blog.html">
+<a data-i18n="nav.blog" class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-colors" href="blog.html">
 <span class="material-symbols-outlined">article</span> Blog
                 </a>
-<a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-colors" href="contact.html">
-<span class="material-symbols-outlined">mail</span> Contact
+<a data-i18n="nav.contact" class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-colors" href="contact.html">
+<span class="material-symbols-outlined">mail</span> Επικοινωνία
                 </a>
 </nav>
 </div>
@@ -179,16 +182,16 @@
 <section class="px-gutter py-section-gap max-w-container-max mx-auto">
 <div class="flex flex-col md:flex-row items-center gap-12">
 <div class="w-full md:w-1/2">
-<span class="font-label-caps text-label-caps text-gold-muted uppercase block mb-4">Master Your Margins</span>
+<span class="font-label-caps text-label-caps text-gold-muted uppercase block mb-4">Ελέγξτε τα περιθώριά σας</span>
 <h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-petrol-dark mb-6">
-                        Scientific Profitability for the Modern Grill House.
+                        Επιστημονική κερδοφορία για το σύγχρονο σουβλατζίδικο.
                     </h1>
 <p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-xl">
-                        Stop guessing your food costs. Our data-driven methodology transforms traditional souvlaki operations into high-precision, profitable enterprises.
+                        Σταματήστε να μαντεύετε το food cost σας. Η μεθοδολογία μας με βάση τα δεδομένα μετατρέπει τις παραδοσιακές λειτουργίες ενός σουβλατζίδικου σε επιχειρήσεις υψηλής ακρίβειας και κερδοφορίας.
                     </p>
 <div class="flex flex-wrap gap-4">
-<button class="bg-petrol-dark text-surface-cream px-8 py-4 rounded-lg font-body-md hover:opacity-90 transition-opacity">Calculate My Profit</button>
-<button class="border border-gold-muted text-petrol-dark px-8 py-4 rounded-lg font-body-md hover:bg-gold-muted/10 transition-colors">View Samples</button>
+<button class="bg-petrol-dark text-surface-cream px-8 py-4 rounded-lg font-body-md hover:opacity-90 transition-opacity">Υπολογισμός κέρδους</button>
+<button class="border border-gold-muted text-petrol-dark px-8 py-4 rounded-lg font-body-md hover:bg-gold-muted/10 transition-colors">Δείτε δείγματα</button>
 </div>
 </div>
 <div class="w-full md:w-1/2 relative h-[400px] md:h-[500px]">
@@ -199,10 +202,10 @@
 <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-lg shadow-xl border border-outline-variant max-w-[240px]">
 <div class="flex items-center gap-2 text-data-success mb-2">
 <span class="material-symbols-outlined">trending_up</span>
-<span class="font-label-caps text-label-caps uppercase">Margin Peak</span>
+<span class="font-label-caps text-label-caps uppercase">Κορυφή περιθωρίου</span>
 </div>
 <p class="font-headline-md text-headline-md text-petrol-dark">68.4%</p>
-<p class="text-xs text-on-surface-variant">Optimal Efficiency Score</p>
+<p class="text-xs text-on-surface-variant">Βέλτιστος δείκτης αποδοτικότητας</p>
 </div>
 </div>
 </div>
@@ -211,8 +214,8 @@
 <section class="bg-surface-cream py-section-gap px-gutter">
 <div class="max-w-container-max mx-auto">
 <div class="text-center mb-16">
-<h2 class="font-headline-md text-headline-md text-petrol-dark mb-4">Detailed Cost Architecture</h2>
-<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">We break down every euro spent to ensure your grill house remains competitive without sacrificing quality.</p>
+<h2 class="font-headline-md text-headline-md text-petrol-dark mb-4">Αναλυτική αρχιτεκτονική κόστους</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Αναλύουμε κάθε ευρώ δαπάνης ώστε το σουβλατζίδικό σας να παραμένει ανταγωνιστικό χωρίς συμβιβασμούς στην ποιότητα.</p>
 </div>
 <div class="bento-grid">
 <!-- Ingredient Costing -->
@@ -221,18 +224,18 @@
 <div class="w-12 h-12 bg-petrol-dark/10 rounded-lg flex items-center justify-center text-petrol-dark mb-6">
 <span class="material-symbols-outlined">kitchen</span>
 </div>
-<h3 class="font-headline-md text-headline-md text-petrol-dark mb-4">Ingredient Costing / Κοστολόγηση Υλικών</h3>
+<h3 class="font-headline-md text-headline-md text-petrol-dark mb-4">Κοστολόγηση υλικών</h3>
 <p class="font-body-md text-body-md text-on-surface-variant max-w-xl">
-                                Dynamic price tracking for pork, chicken, and pita. We monitor market fluctuations to adjust your menu pricing in real-time, protecting your bottom line.
+                                Δυναμική παρακολούθηση τιμών για χοιρινό, κοτόπουλο και πίτα. Παρακολουθούμε τις διακυμάνσεις της αγοράς για προσαρμογή τιμών και προστασία της κερδοφορίας.
                             </p>
 </div>
 <div class="mt-8 pt-8 border-t border-outline-variant flex gap-8">
 <div>
-<span class="block text-xs text-on-surface-variant uppercase mb-1">Market Avg</span>
+<span class="block text-xs text-on-surface-variant uppercase mb-1">Μέσος όρος αγοράς</span>
 <span class="font-data-numeral text-data-numeral text-petrol-dark">€4.20/kg</span>
 </div>
 <div>
-<span class="block text-xs text-on-surface-variant uppercase mb-1">Yield Factor</span>
+<span class="block text-xs text-on-surface-variant uppercase mb-1">Συντελεστής απόδοσης</span>
 <span class="font-data-numeral text-data-numeral text-data-success">92%</span>
 </div>
 </div>
@@ -243,16 +246,16 @@
 <div class="w-12 h-12 bg-gold-muted rounded-lg flex items-center justify-center text-petrol-dark mb-6">
 <span class="material-symbols-outlined">scale</span>
 </div>
-<h3 class="font-headline-md text-headline-md mb-4">Portion Control</h3>
+<h3 class="font-headline-md text-headline-md mb-4">Έλεγχος μερίδας</h3>
 <p class="font-body-md text-body-md text-surface-variant/80">
-                                Every gram counts. Standardization of pita wraps ensures consistency and eliminates waste.
+                                Κάθε γραμμάριο μετρά. Η τυποποίηση στα τυλιχτά εξασφαλίζει συνέπεια και μειώνει τη σπατάλη.
                             </p>
 </div>
 <div class="mt-4">
 <div class="w-full bg-surface-variant/20 h-2 rounded-full overflow-hidden">
 <div class="bg-gold-muted h-full w-3/4"></div>
 </div>
-<span class="text-xs mt-2 block text-gold-muted">±2g Precision Target</span>
+<span class="text-xs mt-2 block text-gold-muted">Στόχος ακρίβειας ±2g</span>
 </div>
 </div>
 <!-- Packaging Cost -->
@@ -260,9 +263,9 @@
 <div class="w-12 h-12 bg-secondary-container rounded-lg flex items-center justify-center text-on-secondary-container mb-6">
 <span class="material-symbols-outlined">inventory_2</span>
 </div>
-<h3 class="font-headline-md text-headline-md text-petrol-dark mb-4">Packaging / Συσκευασία</h3>
+<h3 class="font-headline-md text-headline-md text-petrol-dark mb-4">Συσκευασία</h3>
 <p class="font-body-md text-body-md text-on-surface-variant">
-                            Premium paper and biodegradable plastics. We calculate the "hidden" cost of every wrap and bag.
+                            Ποιοτικό χαρτί και βιοδιασπώμενα πλαστικά. Υπολογίζουμε το «κρυφό» κόστος κάθε περιτυλίγματος και σακούλας.
                         </p>
 </div>
 <!-- Labor & Delivery -->
@@ -270,16 +273,16 @@
 <div class="bg-surface-container-high rounded-xl p-8 border border-outline-variant">
 <div class="flex items-center gap-4 mb-4">
 <span class="material-symbols-outlined text-petrol-dark">groups</span>
-<h4 class="font-headline-md text-headline-md text-petrol-dark">Labor Cost</h4>
+<h4 class="font-headline-md text-headline-md text-petrol-dark">Κόστος εργασίας</h4>
 </div>
-<p class="font-body-md text-body-md text-on-surface-variant">Staff efficiency ratios per pita produced during peak hours.</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Δείκτες αποδοτικότητας προσωπικού ανά πίτα στις ώρες αιχμής.</p>
 </div>
 <div class="bg-surface-container-high rounded-xl p-8 border border-outline-variant">
 <div class="flex items-center gap-4 mb-4">
 <span class="material-symbols-outlined text-data-alert">delivery_dining</span>
-<h4 class="font-headline-md text-headline-md text-petrol-dark">Delivery Fees</h4>
+<h4 class="font-headline-md text-headline-md text-petrol-dark">Χρεώσεις delivery</h4>
 </div>
-<p class="font-body-md text-body-md text-on-surface-variant">Navigating the 25-35% platform commissions effectively.</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Αποτελεσματική διαχείριση προμηθειών πλατφορμών 25-35%.</p>
 </div>
 </div>
 </div>
@@ -293,30 +296,30 @@
 </div>
 <div class="relative z-10 grid md:grid-cols-2 gap-12 items-center">
 <div>
-<h2 class="font-headline-lg text-headline-lg text-surface-cream mb-6">Real-Time Profitability Dashboard</h2>
+<h2 class="font-headline-lg text-headline-lg text-surface-cream mb-6">Πίνακας κερδοφορίας σε πραγματικό χρόνο</h2>
 <p class="font-body-lg text-body-lg text-surface-variant mb-8">
                             Connect your POS and see your gross profit margins per item instantly. Identify your 'Stars' (High Profit, High Popularity) and your 'Plowhorses'.
                         </p>
 <ul class="space-y-4 mb-8">
 <li class="flex items-center gap-3 text-surface-cream">
 <span class="material-symbols-outlined text-gold-muted" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-                                Auto-updated ingredient pricing
+                                Αυτόματη ενημέρωση τιμών υλικών
                             </li>
 <li class="flex items-center gap-3 text-surface-cream">
 <span class="material-symbols-outlined text-gold-muted" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-                                Waste tracking algorithms
+                                Αλγόριθμοι παρακολούθησης φύρας
                             </li>
 <li class="flex items-center gap-3 text-surface-cream">
 <span class="material-symbols-outlined text-gold-muted" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-                                Multi-platform delivery analysis
+                                Ανάλυση delivery ανά πλατφόρμα
                             </li>
 </ul>
-<button class="bg-gold-muted text-petrol-dark font-bold px-10 py-5 rounded-lg hover:scale-105 transition-transform">Get Started Free</button>
+<button class="bg-gold-muted text-petrol-dark font-bold px-10 py-5 rounded-lg hover:scale-105 transition-transform">Ξεκινήστε δωρεάν</button>
 </div>
 <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-8">
 <div class="flex justify-between items-end mb-8">
 <div>
-<span class="text-surface-variant/60 text-xs uppercase block">Total Net Profit</span>
+<span class="text-surface-variant/60 text-xs uppercase block">Συνολικό καθαρό κέρδος</span>
 <span class="text-3xl font-bold text-surface-cream">€12,450.00</span>
 </div>
 <span class="bg-data-success/20 text-data-success px-3 py-1 rounded text-sm">+14.2%</span>
@@ -325,7 +328,7 @@
 <div class="relative pt-1">
 <div class="flex mb-2 items-center justify-between">
 <div>
-<span class="text-xs font-semibold inline-block text-surface-variant">Food Cost (Ideal)</span>
+<span class="text-xs font-semibold inline-block text-surface-variant">Food Cost (ιδανικό)</span>
 </div>
 <div class="text-right">
 <span class="text-xs font-semibold inline-block text-gold-muted">28%</span>
@@ -338,7 +341,7 @@
 <div class="relative pt-1">
 <div class="flex mb-2 items-center justify-between">
 <div>
-<span class="text-xs font-semibold inline-block text-surface-variant">Labor Cost</span>
+<span class="text-xs font-semibold inline-block text-surface-variant">Κόστος εργασίας</span>
 </div>
 <div class="text-right">
 <span class="text-xs font-semibold inline-block text-surface-cream">18%</span>
@@ -359,19 +362,19 @@
 <div class="w-full flex flex-col md:flex-row justify-between items-center gap-base max-w-container-max mx-auto">
 <div class="text-left">
 <img alt="mysouvlaki logo" class="h-16 w-auto object-contain mb-2" src="assets/logo/logo.webp"/>
-<p class="font-body-md text-body-md text-surface-variant/80 max-w-xs">Professional culinary logic for the high-yield grill house.</p>
+<p class="font-body-md text-body-md text-surface-variant/80 max-w-xs">Επαγγελματική γαστρονομική λογική για σουβλατζίδικα υψηλής απόδοσης.</p>
 </div>
 <div class="flex flex-wrap justify-center gap-6">
-<a class="font-body-md text-surface-variant/80 hover:text-surface-cream transition-colors" href="index.html">Home</a>
-<a class="font-body-md text-surface-variant/80 hover:text-surface-cream transition-colors" href="about.html">About</a>
-<a class="font-body-md text-gold-muted font-bold" href="foodcost.html">Food Cost</a>
-<a class="font-body-md text-surface-variant/80 hover:text-surface-cream transition-colors" href="blog.html">Blog</a>
-<a class="font-body-md text-surface-variant/80 hover:text-surface-cream transition-colors" href="contact.html">Contact</a>
-<a class="font-body-md text-surface-variant/80 hover:text-surface-cream transition-colors" href="#">Privacy Policy</a>
+<a data-i18n="nav.home" class="font-body-md text-surface-variant/80 hover:text-surface-cream transition-colors" href="index.html">Αρχική</a>
+<a data-i18n="nav.about" class="font-body-md text-surface-variant/80 hover:text-surface-cream transition-colors" href="about.html">Σχετικά</a>
+<a data-i18n="nav.foodCost" class="font-body-md text-gold-muted font-bold" href="foodcost.html">Food Cost</a>
+<a data-i18n="nav.blog" class="font-body-md text-surface-variant/80 hover:text-surface-cream transition-colors" href="blog.html">Blog</a>
+<a data-i18n="nav.contact" class="font-body-md text-surface-variant/80 hover:text-surface-cream transition-colors" href="contact.html">Επικοινωνία</a>
+<a class="font-body-md text-surface-variant/80 hover:text-surface-cream transition-colors" href="#">Πολιτική απορρήτου</a>
 </div>
 </div>
 <div class="text-center mt-12 pt-8 border-t border-white/5">
-<p class="text-surface-variant/60 text-xs uppercase tracking-widest">© 2024 mysouvlaki.gr - Professional Culinary Logic</p>
+<p class="text-surface-variant/60 text-xs uppercase tracking-widest">© 2024 mysouvlaki.gr - Επαγγελματική Γαστρονομική Λογική</p>
 </div>
 </footer>
 <script>
