@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 
-<html class="light" lang="en"><head>
+<html class="light" lang="el"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>mysouvlaki.gr | Culinary Logic</title>
+<meta name="description" content="Ένας χώρος για σουβλάκι, κοστολόγηση και έξυπνη διαχείριση στην εστίαση."/>
+<title>mysouvlaki | Σουβλάκι, κοστολόγηση και κερδοφορία</title>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -137,6 +138,8 @@
       min-height: max(884px, 100dvh);
     }
   </style>
+<style>.language-switch button{cursor:pointer}.language-switch button.active{background:#042B33;color:#F7F4EC;font-weight:700}.language-switch button:focus-visible{outline:2px solid #C2B391;outline-offset:2px}</style>
+<script src="assets/js/i18n.js" defer></script>
 </head>
 <body class="bg-surface text-on-surface font-body-md">
 <!-- TopAppBar -->
@@ -145,15 +148,13 @@
 <img alt="mysouvlaki logo" class="h-12 md:h-16 w-auto object-contain" src="assets/logo/logo.webp"/>
 </a>
 <nav class="hidden md:flex gap-8">
-<a class="font-body-md text-text-main border-b-2 border-gold-muted pb-1" href="index.html">Home</a>
-<a class="font-body-md text-on-surface-variant hover:text-text-main transition-colors" href="about.html">About</a>
-<a class="font-body-md text-on-surface-variant hover:text-text-main transition-colors" href="foodcost.html">Food Cost</a>
-<a class="font-body-md text-on-surface-variant hover:text-text-main transition-colors" href="blog.html">Blog</a>
-<a class="font-body-md text-on-surface-variant hover:text-text-main transition-colors" href="contact.html">Contact</a>
+<a data-i18n="nav.home" class="font-body-md text-text-main border-b-2 border-gold-muted pb-1" href="index.html">Αρχική</a>
+<a data-i18n="nav.about" class="font-body-md text-on-surface-variant hover:text-text-main transition-colors" href="about.html">Σχετικά</a>
+<a data-i18n="nav.foodCost" class="font-body-md text-on-surface-variant hover:text-text-main transition-colors" href="foodcost.html">Food Cost</a>
+<a data-i18n="nav.blog" class="font-body-md text-on-surface-variant hover:text-text-main transition-colors" href="blog.html">Blog</a>
+<a data-i18n="nav.contact" class="font-body-md text-on-surface-variant hover:text-text-main transition-colors" href="contact.html">Επικοινωνία</a>
 </nav>
-<button class="font-label-caps text-label-caps tracking-widest text-petrol-dark px-4 py-2 border border-petrol-dark/20 rounded-full hover:bg-surface-container-low transition-colors">
-            EN/GR
-        </button>
+<div class="language-switch font-label-caps text-label-caps text-petrol-dark border border-petrol-dark/20 rounded-full overflow-hidden" role="group" aria-label="Language selection"><button type="button" data-lang="el" aria-label="Switch language to Greek" aria-pressed="true" class="px-3 py-1 cursor-pointer font-bold">GR</button><button type="button" data-lang="en" aria-label="Switch language to English" aria-pressed="false" class="px-3 py-1 cursor-pointer">EN</button></div>
 </header>
 <main class="pt-24">
 <!-- Hero Section -->
@@ -164,15 +165,15 @@
 <div class="z-10 max-w-4xl">
 <div class="mb-6 inline-flex items-center gap-2 px-3 py-1 bg-secondary-container/30 border border-secondary-fixed-dim rounded-full text-on-secondary-fixed-variant font-label-caps text-label-caps">
 <span class="material-symbols-outlined text-[14px]">analytics</span>
-                    DATA-DRIVEN GASTRONOMY
+                    ΓΑΣΤΡΟΝΟΜΙΑ ΜΕ ΒΑΣΗ ΤΑ ΔΕΔΟΜΕΝΑ
                 </div>
 <h1 class="font-headline-lg text-headline-lg md:text-6xl text-petrol-dark mb-4 leading-tight">
                     Το σουβλάκι πίσω από τους αριθμούς
-                    <span class="block text-gold-muted font-light mt-2 italic md:text-5xl">Souvlaki behind the numbers</span>
+                    <span class="block text-gold-muted font-light mt-2 italic md:text-5xl">Το σουβλάκι πίσω από τους αριθμούς</span>
 </h1>
 <p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto">
                     Ένας χώρος για σουβλάκι, κοστολόγηση και έξυπνη διαχείριση στην εστίαση.<br/>
-<span class="opacity-70">A space for souvlaki, food cost, and smarter restaurant management.</span>
+<span class="opacity-70">Ένας χώρος για σουβλάκι, κοστολόγηση και πιο έξυπνη διαχείριση εστιατορίων.</span>
 </p>
 <div class="flex flex-col md:flex-row justify-center gap-4">
 <button class="bg-petrol-dark text-surface-cream px-10 py-4 rounded-lg font-headline-md text-body-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
@@ -191,18 +192,18 @@
 <!-- Module 1: Precision Costing -->
 <div class="col-span-1 md:col-span-8 glass-card p-8 rounded-xl border border-outline-variant/30 flex flex-col md:flex-row gap-8 items-center reveal-up">
 <div class="flex-1">
-<h3 class="font-headline-md text-headline-md text-petrol-dark mb-4">Precision Food Costing</h3>
+<h3 class="font-headline-md text-headline-md text-petrol-dark mb-4">Ακριβής κοστολόγηση Food Cost</h3>
 <p class="font-body-md text-on-surface-variant mb-6">
-                            Transform every pita and stick into a data point. Our proprietary logic helps you calculate exact margins down to the gram of tzatziki.
+                            Μετατρέψτε κάθε πίτα και καλαμάκι σε σημείο δεδομένων. Η δική μας λογική σας βοηθά να υπολογίζετε ακριβή περιθώρια μέχρι το γραμμάριο τζατζικιού.
                         </p>
 <div class="space-y-3">
 <div class="flex items-center gap-3 text-data-success">
 <span class="material-symbols-outlined">check_circle</span>
-<span class="font-label-caps">REAL-TIME MARGIN TRACKING</span>
+<span class="font-label-caps">ΠΑΡΑΚΟΛΟΥΘΗΣΗ ΠΕΡΙΘΩΡΙΟΥ ΣΕ ΠΡΑΓΜΑΤΙΚΟ ΧΡΟΝΟ</span>
 </div>
 <div class="flex items-center gap-3 text-data-success">
 <span class="material-symbols-outlined">check_circle</span>
-<span class="font-label-caps">SUPPLIER PRICE VARIANCE</span>
+<span class="font-label-caps">ΔΙΑΚΥΜΑΝΣΗ ΤΙΜΩΝ ΠΡΟΜΗΘΕΥΤΩΝ</span>
 </div>
 </div>
 </div>
@@ -214,10 +215,10 @@
 <div class="col-span-1 md:col-span-4 bg-petrol-dark p-8 rounded-xl text-surface-cream flex flex-col justify-between reveal-up">
 <span class="material-symbols-outlined text-4xl text-gold-muted">trending_up</span>
 <div>
-<h4 class="font-headline-md text-headline-md mb-2">Yield Optimization</h4>
-<p class="font-body-md opacity-80 mb-6">Maximize ROI on high-volume menu items through rigorous inventory logic.</p>
+<h4 class="font-headline-md text-headline-md mb-2">Βελτιστοποίηση απόδοσης</h4>
+<p class="font-body-md opacity-80 mb-6">Μεγιστοποιήστε την απόδοση στα είδη με υψηλή ζήτηση μέσα από αυστηρή λογική αποθέματος.</p>
 <div class="px-3 py-1 bg-gold-muted/20 border border-gold-muted/40 rounded inline-block text-gold-muted font-label-caps">
-                            +12.4% AVERAGE MARGIN
+                            +12,4% ΜΕΣΟ ΠΕΡΙΘΩΡΙΟ
                         </div>
 </div>
 </div>
@@ -226,11 +227,11 @@
 <div class="aspect-video mb-4 rounded-lg overflow-hidden bg-surface-container">
 <img class="w-full h-full object-cover" data-alt="A professional architectural photograph of a modern, minimalist restaurant interior in Greece. The design features petrol blue velvet seating, light oak wood tables, and cream walls. Large windows let in soft natural daylight. The mood is sophisticated and corporate, far from traditional casual dining, focusing on upscale culinary management aesthetics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCobwvpicPRIITYz-0McJ6ajXSxGNW7-G0mkUnifc3ffnsOaU9RgBcuXEmSNCm7btpjtjKohbjj6R3o1rIfD_vN9GnavgqeqffblVpDbiJ2KD_n5a9Fi3Dmhk09Kti5gRgVEIN_uYvfRfKkOOFU6bXroFlEAm5QT9OUh7onv03-OVgCgxta0_lkqh9MmeyoDbG_7Mn4vMwmQbbLbOnRSYmgq_J4imNzNlaGFJK9sZRNpgYInTr2qsgBIa95GszIUwGF5-lKh02ns6h8"/>
 </div>
-<span class="font-label-caps text-gold-muted">LATEST BLOG POST</span>
-<h5 class="font-headline-md text-headline-md text-petrol-dark mt-2 mb-3">The Economics of Souvlaki</h5>
-<p class="font-body-md text-on-surface-variant line-clamp-2">How global grain price fluctuations affect local pita sourcing and what you can do to stabilize costs.</p>
+<span class="font-label-caps text-gold-muted">ΤΕΛΕΥΤΑΙΟ ΑΡΘΡΟ</span>
+<h5 class="font-headline-md text-headline-md text-petrol-dark mt-2 mb-3">Η οικονομία του σουβλακιού</h5>
+<p class="font-body-md text-on-surface-variant line-clamp-2">Πώς οι διεθνείς διακυμάνσεις στην τιμή των σιτηρών επηρεάζουν την τοπική προμήθεια πίτας και τι μπορείτε να κάνετε για σταθερό κόστος.</p>
 <a class="inline-flex items-center gap-2 mt-4 text-petrol-dark font-bold hover:underline" href="#">
-                        Read More
+                        Διαβάστε περισσότερα
                         <span class="material-symbols-outlined text-sm">arrow_forward</span>
 </a>
 </div>
@@ -242,7 +243,7 @@
 <p class="font-body-md text-on-surface-variant">Στρατηγική ανάλυση και συμβουλευτική για επαγγελματίες που θέλουν να ξεχωρίσουν στην αγορά της εστίασης.</p>
 </div>
 <div>
-<h3 class="font-headline-md text-headline-md text-petrol-dark mb-2">Expert Knowledge</h3>
+<h3 class="font-headline-md text-headline-md text-petrol-dark mb-2">Εξειδικευμένη Γνώση</h3>
 <p class="font-body-md text-on-surface-variant">Strategic analysis and consulting for professionals aiming to excel in the competitive F&amp;B market.</p>
 </div>
 </div>
@@ -254,15 +255,15 @@
 <div class="px-gutter max-w-container-max mx-auto flex flex-wrap justify-center md:justify-between gap-8 items-center opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
 <div class="flex items-center gap-2">
 <span class="material-symbols-outlined">monitoring</span>
-<span class="font-label-caps tracking-widest text-petrol-dark">INVENTORY ANALYTICS</span>
+<span class="font-label-caps tracking-widest text-petrol-dark">ΑΝΑΛΥΣΗ ΑΠΟΘΕΜΑΤΩΝ</span>
 </div>
 <div class="flex items-center gap-2">
 <span class="material-symbols-outlined">receipt_long</span>
-<span class="font-label-caps tracking-widest text-petrol-dark">FOOD COST CALCULATOR</span>
+<span class="font-label-caps tracking-widest text-petrol-dark">ΥΠΟΛΟΓΙΣΤΗΣ FOOD COST</span>
 </div>
 <div class="flex items-center gap-2">
 <span class="material-symbols-outlined">account_balance</span>
-<span class="font-label-caps tracking-widest text-petrol-dark">FINANCIAL FORECASTING</span>
+<span class="font-label-caps tracking-widest text-petrol-dark">ΟΙΚΟΝΟΜΙΚΗ ΠΡΟΒΛΕΨΗ</span>
 </div>
 <div class="flex items-center gap-2">
 <span class="material-symbols-outlined">menu_book</span>
@@ -275,13 +276,13 @@
 <div class="bg-surface-cream border border-gold-muted/30 rounded-2xl p-8 md:p-16 flex flex-col md:flex-row items-center gap-12 relative overflow-hidden">
 <div class="absolute top-0 right-0 w-64 h-64 bg-gold-muted/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
 <div class="flex-1 z-10">
-<h2 class="font-headline-lg text-headline-lg text-petrol-dark mb-4">Professional Insights</h2>
+<h2 class="font-headline-lg text-headline-lg text-petrol-dark mb-4">Επαγγελματικές πληροφορίες</h2>
 <p class="font-body-lg text-on-surface-variant">Εγγραφείτε για μηνιαία updates σχετικά με την κοστολόγηση και τη διαχείριση εστιατορίων.<br/><span class="text-sm opacity-60 italic">Join our newsletter for monthly F&amp;B management insights.</span></p>
 </div>
 <div class="w-full md:w-auto flex flex-col sm:flex-row gap-3 z-10">
-<input class="bg-surface px-6 py-4 rounded-lg border border-outline-variant focus:border-petrol-dark focus:ring-1 focus:ring-petrol-dark outline-none min-w-[300px]" placeholder="Email address" type="email"/>
+<input class="bg-surface px-6 py-4 rounded-lg border border-outline-variant focus:border-petrol-dark focus:ring-1 focus:ring-petrol-dark outline-none min-w-[300px]" placeholder="Διεύθυνση email" type="email"/>
 <button class="bg-petrol-dark text-surface-cream px-8 py-4 rounded-lg font-bold hover:opacity-90 transition-opacity">
-                        Subscribe
+                        Εγγραφή
                     </button>
 </div>
 </div>
@@ -294,34 +295,34 @@
 <div class="max-w-xs">
 <img alt="mysouvlaki logo" class="h-16 w-auto object-contain mb-4" src="assets/logo/logo.webp"/>
 <p class="font-body-md text-surface-variant/80">
-                        Bridging the gap between culinary tradition and modern financial precision.
+                        Γεφυρώνουμε τη γαστρονομική παράδοση με τη σύγχρονη οικονομική ακρίβεια.
                     </p>
 </div>
 <div class="grid grid-cols-2 md:grid-cols-3 gap-12">
 <div class="flex flex-col gap-3">
-<span class="font-label-caps text-gold-muted mb-2">NAVIGATE</span>
-<a class="text-surface-variant/80 hover:text-surface-cream transition-colors" href="index.html">Home</a>
-<a class="text-surface-variant/80 hover:text-surface-cream transition-colors" href="about.html">About</a>
-<a class="text-surface-variant/80 hover:text-surface-cream transition-colors" href="foodcost.html">Food Cost</a>
+<span class="font-label-caps text-gold-muted mb-2">ΠΛΟΗΓΗΣΗ</span>
+<a data-i18n="nav.home" class="text-surface-variant/80 hover:text-surface-cream transition-colors" href="index.html">Αρχική</a>
+<a data-i18n="nav.about" class="text-surface-variant/80 hover:text-surface-cream transition-colors" href="about.html">Σχετικά</a>
+<a data-i18n="nav.foodCost" class="text-surface-variant/80 hover:text-surface-cream transition-colors" href="foodcost.html">Food Cost</a>
 </div>
 <div class="flex flex-col gap-3">
-<span class="font-label-caps text-gold-muted mb-2">RESOURCES</span>
-<a class="text-surface-variant/80 hover:text-surface-cream transition-colors" href="blog.html">Blog</a>
-<a class="text-surface-variant/80 hover:text-surface-cream transition-colors" href="#">Privacy Policy</a>
-<a class="text-surface-variant/80 hover:text-surface-cream transition-colors" href="#">Terms</a>
+<span class="font-label-caps text-gold-muted mb-2">ΠΗΓΕΣ</span>
+<a data-i18n="nav.blog" class="text-surface-variant/80 hover:text-surface-cream transition-colors" href="blog.html">Blog</a>
+<a class="text-surface-variant/80 hover:text-surface-cream transition-colors" href="#">Πολιτική απορρήτου</a>
+<a class="text-surface-variant/80 hover:text-surface-cream transition-colors" href="#">Όροι</a>
 </div>
 <div class="flex flex-col gap-3">
-<span class="font-label-caps text-gold-muted mb-2">SOCIAL</span>
+<span class="font-label-caps text-gold-muted mb-2">ΚΟΙΝΩΝΙΚΑ</span>
 <a class="text-surface-variant/80 hover:text-surface-cream transition-colors" href="#">LinkedIn</a>
 <a class="text-surface-variant/80 hover:text-surface-cream transition-colors" href="#">Instagram</a>
 </div>
 </div>
 </div>
 <div class="pt-8 border-t border-primary-container flex flex-col md:flex-row justify-between items-center gap-4 text-surface-variant/60 font-body-md">
-<span>© 2024 mysouvlaki.gr - Professional Culinary Logic</span>
+<span>© 2024 mysouvlaki.gr - Επαγγελματική Γαστρονομική Λογική</span>
 <div class="flex gap-6">
-<span>Designed for Excellence</span>
-<span>Bilingual GR/EN</span>
+<span>Σχεδιασμένο για αριστεία</span>
+<span>Δίγλωσσο GR/EN</span>
 </div>
 </div>
 </div>
