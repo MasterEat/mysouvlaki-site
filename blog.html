@@ -126,14 +126,16 @@
   </head>
 <body class="bg-surface font-body-md text-on-surface">
 <!-- TopAppBar -->
-<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-gutter py-4 bg-surface/95 backdrop-blur-sm border-b border-outline-variant dark:border-outline">
-<div class="flex items-center gap-3">
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-gutter py-2 bg-surface/95 backdrop-blur-sm border-b border-outline-variant dark:border-outline gap-4">
+<div class="flex items-center gap-3 shrink-0">
 <button class="md:hidden text-text-main p-1" id="menu-toggle">
 <span class="material-symbols-outlined">menu</span>
 </button>
-<span class="font-headline-md text-headline-md font-bold text-petrol-dark dark:text-primary-fixed-dim">mysouvlaki.gr</span>
+<a aria-label="mysouvlaki home" class="flex items-center" href="index.html">
+<img alt="mysouvlaki logo" class="h-[52px] w-auto md:h-14 lg:h-[68px] object-contain" src="assets/logo.webp"/>
+</a>
 </div>
-<nav class="hidden md:flex gap-8 items-center">
+<nav class="hidden md:flex gap-6 lg:gap-8 items-center">
 <a class="font-body-md text-body-md text-on-surface-variant hover:text-text-main transition-colors duration-200" href="#">Home</a>
 <a class="font-body-md text-body-md text-on-surface-variant hover:text-text-main transition-colors duration-200" href="#">About</a>
 <a class="font-body-md text-body-md text-on-surface-variant hover:text-text-main transition-colors duration-200" href="#">Food Cost</a>
@@ -296,7 +298,7 @@
 <footer class="bg-petrol-dark dark:bg-primary border-t border-primary-container">
 <div class="w-full py-section-gap px-gutter flex flex-col md:flex-row justify-between items-center gap-base max-w-container-max mx-auto">
 <div class="flex flex-col gap-2 text-center md:text-left">
-<span class="font-headline-md text-headline-md text-surface-cream">mysouvlaki.gr</span>
+<img alt="mysouvlaki logo" class="h-14 w-auto object-contain mx-auto md:mx-0" src="assets/logo.webp"/>
 <p class="font-body-md text-body-md text-surface-variant/80">Professional Culinary Logic for High-Yield Enterprises.</p>
 </div>
 <nav class="flex flex-wrap justify-center gap-6 my-8 md:my-0">
