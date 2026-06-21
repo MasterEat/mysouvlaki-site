@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-container": "#7aa8b6",
+                    "on-error": "#ffffff",
+                    "on-tertiary-fixed-variant": "#623f1d",
+                    "on-tertiary-fixed": "#2e1500",
+                    "petrol-dark": "#042B33",
+                    "on-primary-fixed-variant": "#1d4d59",
+                    "secondary-fixed-dim": "#d3c5a5",
+                    "primary-container": "#063d49",
+                    "inverse-surface": "#31312b",
+                    "surface": "#fcf9f1",
+                    "tertiary-container": "#51300f",
+                    "surface-cream": "#F7F4EC",
+                    "on-background": "#1c1c17",
+                    "data-alert": "#A34F4F",
+                    "on-error-container": "#93000a",
+                    "tertiary": "#371b00",
+                    "surface-tint": "#376571",
+                    "on-secondary-fixed": "#221b07",
+                    "surface-variant": "#e5e2da",
+                    "secondary": "#685d43",
+                    "on-primary-fixed": "#001f27",
+                    "on-secondary-container": "#6c6247",
+                    "text-main": "#063D49",
+                    "inverse-on-surface": "#f3f1e9",
+                    "on-surface": "#1c1c17",
+                    "surface-container-high": "#ebe8e0",
+                    "outline-variant": "#c0c8cb",
+                    "surface-container-lowest": "#ffffff",
+                    "background": "#fcf9f1",
+                    "primary-fixed": "#bbeaf9",
+                    "on-secondary-fixed-variant": "#4f462e",
+                    "data-success": "#4A7C59",
+                    "gold-muted": "#C2B391",
+                    "primary": "#00262f",
+                    "surface-container-low": "#f6f3eb",
+                    "on-surface-variant": "#41484b",
+                    "tertiary-fixed": "#ffdcc1",
+                    "primary-fixed-dim": "#a0cedc",
+                    "on-tertiary-container": "#c8976e",
+                    "secondary-container": "#eddebd",
+                    "inverse-primary": "#a0cedc",
+                    "outline": "#71787b",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed": "#f0e1c0",
+                    "surface-dim": "#dcdad2",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#f0bc90",
+                    "surface-container": "#f1eee6",
+                    "surface-container-highest": "#e5e2da",
+                    "surface-bright": "#fcf9f1",
+                    "error": "#ba1a1a",
+                    "on-primary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "section-gap": "64px",
+                    "container-max": "1280px",
+                    "gutter": "24px",
+                    "margin-mobile": "16px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Outfit"],
+                    "headline-md": ["Outfit"],
+                    "headline-lg": ["Outfit"],
+                    "body-md": ["Outfit"],
+                    "headline-lg-mobile": ["Outfit"],
+                    "label-caps": ["Outfit"],
+                    "data-numeral": ["Outfit"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "label-caps": ["12px", {"lineHeight": "1.4", "letterSpacing": "0.08em", "fontWeight": "600"}],
+                    "data-numeral": ["20px", {"lineHeight": "1", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body {
+            background-color: #fcf9f1;
+            font-family: 'Outfit', sans-serif;
+            color: #1c1c17;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .ledger-input:focus {
+            outline: none;
+            border-color: #042B33;
+            box-shadow: 0 0 0 1px #042B33;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="flex flex-col min-h-screen overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-gutter py-4 bg-surface/95 backdrop-blur-sm border-b border-outline-variant dark:border-outline">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-petrol-dark flex items-center justify-center">
+<span class="material-symbols-outlined text-surface-cream text-body-md" data-icon="restaurant">restaurant</span>
+</div>
+<span class="font-headline-md text-headline-md font-bold text-petrol-dark dark:text-primary-fixed-dim">mysouvlaki.gr</span>
+</div>
+<!-- Desktop Nav -->
+<nav class="hidden md:flex gap-base">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-text-main px-4" href="#">Home</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-text-main px-4" href="#">About</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-text-main px-4" href="#">Food Cost</a>
+<a class="font-body-md text-body-md text-text-main border-b-2 border-gold-muted pb-1 px-4" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="font-label-caps text-label-caps text-petrol-dark px-3 py-1 border border-petrol-dark rounded-lg">EN/GR</button>
+<button class="md:hidden flex items-center" id="menu-toggle">
+<span class="material-symbols-outlined text-text-main" data-icon="menu">menu</span>
+</button>
+</div>
+</header>
+<!-- Navigation Drawer (Mobile) -->
+<div class="fixed inset-0 bg-black/50 z-[60] hidden transition-opacity duration-300" id="drawer-overlay"></div>
+<aside class="fixed inset-y-0 left-0 z-[70] transform -translate-x-full transition-transform duration-300 ease-in-out h-full w-72 bg-surface-cream dark:bg-petrol-dark shadow-xl" id="nav-drawer">
+<div class="p-gutter flex flex-col h-full">
+<div class="flex justify-between items-center mb-section-gap">
+<span class="font-headline-md text-headline-md text-petrol-dark">Menu</span>
+<button id="drawer-close">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-2">
+<a class="font-body-lg text-body-lg text-on-surface-variant px-4 py-3 hover:bg-surface-container-high rounded-lg transition-colors flex items-center gap-4" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span> Home
+                </a>
+<a class="font-body-lg text-body-lg text-on-surface-variant px-4 py-3 hover:bg-surface-container-high rounded-lg transition-colors flex items-center gap-4" href="#">
+<span class="material-symbols-outlined" data-icon="info">info</span> About
+                </a>
+<a class="font-body-lg text-body-lg text-on-surface-variant px-4 py-3 hover:bg-surface-container-high rounded-lg transition-colors flex items-center gap-4" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span> Food Cost
+                </a>
+<a class="font-body-lg text-body-lg bg-secondary-container text-on-secondary-container rounded-lg px-4 py-3 flex items-center gap-4" href="#">
+<span class="material-symbols-outlined" data-icon="mail" style="font-variation-settings: 'FILL' 1;">mail</span> Contact
+                </a>
+</div>
+</div>
+</aside>
+<main class="flex-grow pt-32 pb-section-gap px-gutter max-w-container-max mx-auto w-full">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-section-gap">
+<!-- Left Side: Intent & Branding -->
+<div class="lg:col-span-5 flex flex-col justify-center">
+<span class="font-label-caps text-label-caps text-gold-muted uppercase tracking-widest mb-4">Get in touch</span>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-petrol-dark mb-6 leading-tight">
+                    Συνεργασία & Υποστήριξη.<br/>Let’s grow your business together.
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md mb-base">
+                    Whether you are an established restaurant owner or a new culinary entrepreneur, our team is ready to optimize your profitability through data-driven food costing and operational logic.
+                </p>
+<div class="mt-8 space-y-6">
+<div class="flex items-start gap-4">
+<div class="p-3 bg-surface-container rounded-lg">
+<span class="material-symbols-outlined text-petrol-dark" data-icon="location_on">location_on</span>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-gold-muted mb-1">HEADQUARTERS</p>
+<p class="font-body-md text-body-md text-petrol-dark">Athens, Greece</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="p-3 bg-surface-container rounded-lg">
+<span class="material-symbols-outlined text-petrol-dark" data-icon="call">call</span>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-gold-muted mb-1">PHONE</p>
+<p class="font-body-md text-body-md text-petrol-dark">+30 210 000 0000</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Side: Contact Form -->
+<div class="lg:col-span-7">
+<div class="bg-surface-cream border border-outline-variant p-gutter rounded-xl shadow-sm relative overflow-hidden">
+<!-- Subtle background decoration -->
+<div class="absolute top-0 right-0 w-32 h-32 bg-gold-muted/5 rounded-full -mr-16 -mt-16"></div>
+<form class="relative z-10 flex flex-col gap-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Name Field -->
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-label-caps text-petrol-dark flex justify-between" for="name">
+<span>ΟΝΟΜΑΤΕΠΩΝΥΜΟ</span>
+<span class="text-gold-muted">FULL NAME</span>
+</label>
+<input class="ledger-input bg-surface border border-outline-variant rounded-lg p-4 font-body-md text-body-md focus:ring-0 transition-all" id="name" name="name" placeholder="John Doe / Ιωάννης Παπαδόπουλος" type="text"/>
+</div>
+<!-- Email Field -->
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-label-caps text-petrol-dark flex justify-between" for="email">
+<span>EMAIL</span>
+<span class="text-gold-muted">ADDRESS</span>
+</label>
+<input class="ledger-input bg-surface border border-outline-variant rounded-lg p-4 font-body-md text-body-md focus:ring-0 transition-all" id="email" name="email" placeholder="email@example.com" type="email"/>
+</div>
+</div>
+<!-- Message Field -->
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-label-caps text-petrol-dark flex justify-between" for="message">
+<span>ΜΗΝΥΜΑ</span>
+<span class="text-gold-muted">YOUR MESSAGE</span>
+</label>
+<textarea class="ledger-input bg-surface border border-outline-variant rounded-lg p-4 font-body-md text-body-md focus:ring-0 transition-all resize-none" id="message" name="message" placeholder="Describe your inquiry..." rows="5"></textarea>
+</div>
+<!-- Submit Button -->
+<button class="bg-petrol-dark text-surface-cream font-headline-md text-headline-md py-4 rounded-lg hover:opacity-90 transition-opacity active:scale-[0.98] flex items-center justify-center gap-3" type="submit">
+                            ΑΠΟΣΤΟΛΗ / SEND
+                            <span class="material-symbols-outlined" data-icon="send">send</span>
+</button>
+</form>
+</div>
+<!-- Success indicator chip -->
+<div class="mt-base flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-data-success"></div>
+<span class="font-label-caps text-label-caps text-data-success uppercase">Encryption Active: Secure Data Transmission</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Map Section (Asymmetric) -->
+<section class="w-full bg-surface-container py-section-gap px-gutter">
+<div class="max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-8 h-80 md:h-[400px] bg-outline-variant rounded-xl overflow-hidden relative grayscale hover:grayscale-0 transition-all duration-700">
+<div class="absolute inset-0 bg-petrol-dark/10 pointer-events-none"></div>
+<img class="w-full h-full object-cover" data-alt="A clean, minimalist architectural map visualization of Athens, Greece, showing simplified street grids in a petrol and cream color palette. The aesthetic is professional and corporate, emphasizing urban planning and structural logic rather than a standard tourist map. The lighting is soft and even, suggesting a high-end digital report interface." data-location="Athens, Greece" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA45L1kIC_Vovm9y8-r19vdu6057cJ9Za50W_N1r7eaj8pjoGNixyXmyBbKbyIOmw0xz1k9n3H_pmlJwSqgTilLvnu9e4uwRUzGJl_AFnOHI8F7mX4tsU9JwyTIxGtj9lqLbbkHaL-K7LPcGnuNPk2NU5EmW2pbKqbfWuJ9vU6PuvwQPQzkUlwONNqN_aHE0pHsWpM10YA3RPQT7E-cG7xXgJvuOa0fYXLWVKEGWpoaFQTMITVldqNolAcIi4jgJNggJNEOw9osE4H0"/>
+</div>
+<div class="md:col-span-4 pl-0 md:pl-base">
+<h3 class="font-headline-md text-headline-md text-petrol-dark mb-4">Visit Our Office</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Our strategic consulting hub is located in the heart of Athens, facilitating close collaboration with regional gastronomy leaders.</p>
+<a class="inline-flex items-center gap-2 font-label-caps text-label-caps text-petrol-dark font-bold hover:text-gold-muted transition-colors" href="#">
+                        GET DIRECTIONS <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-petrol-dark dark:bg-primary w-full py-section-gap px-gutter border-t border-primary-container">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-base">
+<div class="flex flex-col items-center md:items-start gap-4">
+<div class="w-16 h-16 bg-surface-cream rounded-xl p-2 flex items-center justify-center">
+<img alt="mysouvlaki logo" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSKed8ZARqIPzxidnd99AOS6fbS3roz-yFQod8ZosqTFBZwVlCqrxViqL91E-bv19LessWhCly3nT2ozmLWbcaOMYG1r56Il9w_sKryJ_f2_Dj1QztIwTihDeiIyBR6y8R8tQFlgEPa2urKv3Ofn_rKimXINW033JxxHTJMg9ENfaekBl4Tv1UT-YZNu7aazNa18Qr_tyEIgkpGZjSw4MSYL0KIwFf8uZLbfy30SdPSk-o2K_K_Hs7tB8NHJv1BObV2HKFlWwKDFTa"/>
+</div>
+<span class="font-headline-md text-headline-md text-surface-cream">mysouvlaki.gr</span>
+<p class="font-body-md text-body-md text-surface-variant/80 text-center md:text-left">© 2024 mysouvlaki.gr - Professional Culinary Logic</p>
+</div>
+<div class="flex flex-wrap justify-center md:justify-end gap-x-8 gap-y-4">
+<a class="font-body-md text-body-md text-surface-variant/80 hover:text-surface-cream transition-colors" href="#">Home</a>
+<a class="font-body-md text-body-md text-surface-variant/80 hover:text-surface-cream transition-colors" href="#">About</a>
+<a class="font-body-md text-body-md text-surface-variant/80 hover:text-surface-cream transition-colors" href="#">Food Cost</a>
+<a class="font-body-md text-body-md text-surface-variant/80 hover:text-surface-cream transition-colors" href="#">Blog</a>
+<a class="font-body-md text-body-md text-gold-muted font-bold transition-colors" href="#">Contact</a>
+<a class="font-body-md text-body-md text-surface-variant/80 hover:text-surface-cream transition-colors" href="#">Privacy Policy</a>
+</div>
+</div>
+</footer>
+<script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const drawer = document.getElementById('nav-drawer');
+        const overlay = document.getElementById('drawer-overlay');
+        const drawerClose = document.getElementById('drawer-close');
+
+        function openDrawer() {
+            drawer.classList.remove('-translate-x-full');
+            overlay.classList.remove('hidden');
+            setTimeout(() => overlay.classList.add('opacity-100'), 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeDrawer() {
+            drawer.classList.add('-translate-x-full');
+            overlay.classList.remove('opacity-100');
+            setTimeout(() => overlay.classList.add('hidden'), 300);
+            document.body.style.overflow = 'auto';
+        }
+
+        menuToggle.addEventListener('click', openDrawer);
+        drawerClose.addEventListener('click', closeDrawer);
+        overlay.addEventListener('click', closeDrawer);
+    </script>
+</body></html>
