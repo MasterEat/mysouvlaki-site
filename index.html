@@ -3,8 +3,7 @@
 <html class="light" lang="el"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta name="description" content="Σουβλάκι, food cost και έξυπνη διαχείριση εστίασης από το mysouvlaki.gr."/>
-<title>mysouvlaki.gr | Culinary Logic</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -105,6 +104,10 @@
         }
     </script>
 <style>
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 96px;
+        }
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
@@ -141,25 +144,41 @@
 </head>
 <body class="bg-surface text-on-surface font-body-md">
 <!-- TopAppBar -->
-<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-gutter py-4 bg-surface/95 backdrop-blur-sm border-b border-outline-variant">
-<div class="flex items-center gap-base">
-<img alt="mysouvlaki logo" class="w-10 h-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDA4tDTIoIOBP7ZDTZ0eMmLqC5jeQcrso79neRdUtRsa22AnIDAcw5sRn1vn_VAOUWvJszLbanaKGrEmpZ25zkOMdprf95HN0s6YkkoY8zuyOqAuPWLeSHWfwfQmyeBiYr5TPQQnRuNG9cgORuUxKpcZ0vMPB0FKxp1DO72tqzR9npKjwQs3hrkYYClza2PHwX4ghEqSDx2PrjJEyzb_mmss8yQ_NWFhiz_W4iT8qohXSudmrzPO-BsWqYTc_mJdv9Hv40E3gjnGxKF"/>
+<header class="sticky top-0 left-0 w-full z-50 bg-surface/95 backdrop-blur-sm border-b border-outline-variant">
+<div class="px-gutter py-3 max-w-container-max mx-auto flex justify-between items-center gap-4">
+<a aria-label="mysouvlaki home" class="flex items-center gap-base shrink-0" href="#home">
+<img alt="mysouvlaki logo" class="w-12 h-12 object-contain" src="assets/logo/logo.webp"/>
 <span class="font-headline-md text-headline-md font-bold text-petrol-dark">mysouvlaki.gr</span>
-</div>
-<nav class="hidden md:flex gap-8">
-<a class="font-body-md text-text-main border-b-2 border-gold-muted pb-1" href="#">Home</a>
-<a class="font-body-md text-on-surface-variant hover:text-text-main transition-colors" href="#">About</a>
-<a class="font-body-md text-on-surface-variant hover:text-text-main transition-colors" href="#">Food Cost</a>
-<a class="font-body-md text-on-surface-variant hover:text-text-main transition-colors" href="#">Blog</a>
-<a class="font-body-md text-on-surface-variant hover:text-text-main transition-colors" href="#">Contact</a>
+</a>
+<nav aria-label="Primary navigation" class="hidden md:flex gap-8 items-center">
+<a class="font-body-md text-text-main border-b-2 border-gold-muted pb-1" href="#home">Home</a>
+<a class="font-body-md text-on-surface-variant hover:text-text-main transition-colors" href="#about">About</a>
+<a class="font-body-md text-on-surface-variant hover:text-text-main transition-colors" href="#food-cost">Food Cost</a>
+<a class="font-body-md text-on-surface-variant hover:text-text-main transition-colors" href="#blog">Blog</a>
+<a class="font-body-md text-on-surface-variant hover:text-text-main transition-colors" href="#contact">Contact</a>
 </nav>
-<button class="font-label-caps text-label-caps tracking-widest text-petrol-dark px-4 py-2 border border-petrol-dark/20 rounded-full hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-3">
+<button aria-label="Switch language between English and Greek" class="font-label-caps text-label-caps tracking-widest text-petrol-dark px-4 py-2 border border-petrol-dark/20 rounded-full hover:bg-surface-container-low transition-colors">
             EN/GR
         </button>
+<button aria-controls="mobile-menu" aria-expanded="false" aria-label="Open navigation menu" class="md:hidden inline-flex items-center justify-center w-11 h-11 rounded-full border border-petrol-dark/20 text-petrol-dark hover:bg-surface-container-low transition-colors" id="menu-toggle" type="button">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+<nav aria-label="Mobile navigation" class="hidden md:hidden border-t border-outline-variant bg-surface px-gutter py-4" id="mobile-menu">
+<div class="flex flex-col gap-4 max-w-container-max mx-auto">
+<a class="font-body-md text-text-main" href="#home">Home</a>
+<a class="font-body-md text-on-surface-variant hover:text-text-main transition-colors" href="#about">About</a>
+<a class="font-body-md text-on-surface-variant hover:text-text-main transition-colors" href="#food-cost">Food Cost</a>
+<a class="font-body-md text-on-surface-variant hover:text-text-main transition-colors" href="#blog">Blog</a>
+<a class="font-body-md text-on-surface-variant hover:text-text-main transition-colors" href="#contact">Contact</a>
+</div>
+</nav>
 </header>
-<main class="pt-24">
+<main>
 <!-- Hero Section -->
-<section class="min-h-[707px] flex flex-col justify-center items-center text-center px-gutter max-w-container-max mx-auto py-section-gap relative overflow-hidden">
+<section id="home" class="min-h-[707px] flex flex-col justify-center items-center text-center px-gutter max-w-container-max mx-auto py-section-gap relative overflow-hidden">
 <div class="absolute inset-0 z-0 opacity-10 pointer-events-none">
 
 </div>
@@ -177,23 +196,23 @@
 <span class="opacity-70">A space for souvlaki, food cost, and smarter restaurant management.</span>
 </p>
 <div class="flex flex-col md:flex-row justify-center gap-4">
-<button class="bg-petrol-dark text-surface-cream px-10 py-4 rounded-lg font-headline-md text-body-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
+<a class="bg-petrol-dark text-surface-cream px-10 py-4 rounded-lg font-headline-md text-body-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2" href="#food-cost">
                         Food Cost
                         <span class="material-symbols-outlined">chevron_right</span>
-</button>
-<button class="border-2 border-gold-muted text-petrol-dark px-10 py-4 rounded-lg font-headline-md text-body-lg hover:bg-surface-container-low transition-colors">
+</a>
+<a class="border-2 border-gold-muted text-petrol-dark px-10 py-4 rounded-lg font-headline-md text-body-lg hover:bg-surface-container-low transition-colors" href="#blog">
                         Blog
-                    </button>
+                    </a>
 </div>
 </div>
 </section>
 <!-- Bento Management Modules -->
-<section class="px-gutter max-w-container-max mx-auto pb-section-gap">
+<section id="about" class="px-gutter max-w-container-max mx-auto pb-section-gap">
 <div class="bento-grid">
 <!-- Module 1: Precision Costing -->
 <div class="col-span-1 md:col-span-8 glass-card p-8 rounded-xl border border-outline-variant/30 flex flex-col md:flex-row gap-8 items-center reveal-up">
 <div class="flex-1">
-<h3 class="font-headline-md text-headline-md text-petrol-dark mb-4">Precision Food Costing</h3>
+<h2 class="font-headline-md text-headline-md text-petrol-dark mb-4">Precision Food Costing</h2>
 <p class="font-body-md text-on-surface-variant mb-6">
                             Transform every pita and stick into a data point. Our proprietary logic helps you calculate exact margins down to the gram of tzatziki.
                         </p>
@@ -216,7 +235,7 @@
 <div class="col-span-1 md:col-span-4 bg-petrol-dark p-8 rounded-xl text-surface-cream flex flex-col justify-between reveal-up">
 <span class="material-symbols-outlined text-4xl text-gold-muted">trending_up</span>
 <div>
-<h4 class="font-headline-md text-headline-md mb-2">Yield Optimization</h4>
+<h2 class="font-headline-md text-headline-md mb-2">Yield Optimization</h2>
 <p class="font-body-md opacity-80 mb-6">Maximize ROI on high-volume menu items through rigorous inventory logic.</p>
 <div class="px-3 py-1 bg-gold-muted/20 border border-gold-muted/40 rounded inline-block text-gold-muted font-label-caps">
                             +12.4% AVERAGE MARGIN
@@ -224,18 +243,18 @@
 </div>
 </div>
 <!-- Module 3: Blog Feature -->
-<div class="col-span-1 md:col-span-4 glass-card p-6 rounded-xl border border-outline-variant/30 reveal-up">
+<section id="blog" class="col-span-1 md:col-span-4 glass-card p-6 rounded-xl border border-outline-variant/30 reveal-up">
 <div class="aspect-video mb-4 rounded-lg overflow-hidden bg-surface-container">
 <img class="w-full h-full object-cover" data-alt="A professional architectural photograph of a modern, minimalist restaurant interior in Greece. The design features petrol blue velvet seating, light oak wood tables, and cream walls. Large windows let in soft natural daylight. The mood is sophisticated and corporate, far from traditional casual dining, focusing on upscale culinary management aesthetics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCobwvpicPRIITYz-0McJ6ajXSxGNW7-G0mkUnifc3ffnsOaU9RgBcuXEmSNCm7btpjtjKohbjj6R3o1rIfD_vN9GnavgqeqffblVpDbiJ2KD_n5a9Fi3Dmhk09Kti5gRgVEIN_uYvfRfKkOOFU6bXroFlEAm5QT9OUh7onv03-OVgCgxta0_lkqh9MmeyoDbG_7Mn4vMwmQbbLbOnRSYmgq_J4imNzNlaGFJK9sZRNpgYInTr2qsgBIa95GszIUwGF5-lKh02ns6h8"/>
 </div>
 <span class="font-label-caps text-gold-muted">LATEST BLOG POST</span>
-<h5 class="font-headline-md text-headline-md text-petrol-dark mt-2 mb-3">The Economics of Souvlaki</h5>
+<h2 class="font-headline-md text-headline-md text-petrol-dark mt-2 mb-3">The Economics of Souvlaki</h2>
 <p class="font-body-md text-on-surface-variant line-clamp-2">How global grain price fluctuations affect local pita sourcing and what you can do to stabilize costs.</p>
-<a class="inline-flex items-center gap-2 mt-4 text-petrol-dark font-bold hover:underline" href="#">
+<a class="inline-flex items-center gap-2 mt-4 text-petrol-dark font-bold hover:underline" href="#blog">
                         Read More
                         <span class="material-symbols-outlined text-sm">arrow_forward</span>
 </a>
-</div>
+</section>
 <!-- Module 4: Bilingual Logic -->
 <div class="col-span-1 md:col-span-8 glass-card p-8 rounded-xl border border-outline-variant/30 flex flex-col justify-center reveal-up">
 <div class="grid md:grid-cols-2 gap-8">
@@ -252,7 +271,7 @@
 </div>
 </section>
 <!-- Data Visualization Strip -->
-<section class="bg-surface-container-low py-12 border-y border-outline-variant/20 mb-section-gap">
+<section id="food-cost" class="bg-surface-container-low py-12 border-y border-outline-variant/20 mb-section-gap">
 <div class="px-gutter max-w-container-max mx-auto flex flex-wrap justify-center md:justify-between gap-8 items-center opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
 <div class="flex items-center gap-2">
 <span class="material-symbols-outlined">monitoring</span>
@@ -273,7 +292,7 @@
 </div>
 </section>
 <!-- Newsletter CTA -->
-<section class="px-gutter max-w-container-max mx-auto mb-section-gap">
+<section id="contact" class="px-gutter max-w-container-max mx-auto mb-section-gap">
 <div class="bg-surface-cream border border-gold-muted/30 rounded-2xl p-8 md:p-16 flex flex-col md:flex-row items-center gap-12 relative overflow-hidden">
 <div class="absolute top-0 right-0 w-64 h-64 bg-gold-muted/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
 <div class="flex-1 z-10">
@@ -294,7 +313,10 @@
 <div class="px-gutter max-w-container-max mx-auto">
 <div class="flex flex-col md:flex-row justify-between items-start gap-12 mb-12">
 <div class="max-w-xs">
-<span class="font-headline-md text-headline-md text-surface-cream block mb-4">mysouvlaki.gr</span>
+<a aria-label="mysouvlaki home" class="flex items-center gap-3 mb-4" href="#home">
+<img alt="mysouvlaki logo" class="w-12 h-12 object-contain" src="assets/logo/logo.webp"/>
+<span class="font-headline-md text-headline-md text-surface-cream">mysouvlaki.gr</span>
+</a>
 <p class="font-body-md text-surface-variant/80">
                         Bridging the gap between culinary tradition and modern financial precision.
                     </p>
@@ -302,13 +324,14 @@
 <div class="grid grid-cols-2 md:grid-cols-3 gap-12">
 <div class="flex flex-col gap-3">
 <span class="font-label-caps text-gold-muted mb-2">NAVIGATE</span>
-<a class="text-surface-variant/80 hover:text-surface-cream transition-colors" href="#">Home</a>
-<a class="text-surface-variant/80 hover:text-surface-cream transition-colors" href="#">About</a>
-<a class="text-surface-variant/80 hover:text-surface-cream transition-colors" href="#">Food Cost</a>
+<a class="text-surface-variant/80 hover:text-surface-cream transition-colors" href="#home">Home</a>
+<a class="text-surface-variant/80 hover:text-surface-cream transition-colors" href="#about">About</a>
+<a class="text-surface-variant/80 hover:text-surface-cream transition-colors" href="#food-cost">Food Cost</a>
+<a class="text-surface-variant/80 hover:text-surface-cream transition-colors" href="#contact">Contact</a>
 </div>
 <div class="flex flex-col gap-3">
 <span class="font-label-caps text-gold-muted mb-2">RESOURCES</span>
-<a class="text-surface-variant/80 hover:text-surface-cream transition-colors" href="#">Blog</a>
+<a class="text-surface-variant/80 hover:text-surface-cream transition-colors" href="#blog">Blog</a>
 <a class="text-surface-variant/80 hover:text-surface-cream transition-colors" href="#">Privacy Policy</a>
 <a class="text-surface-variant/80 hover:text-surface-cream transition-colors" href="#">Terms</a>
 </div>
@@ -329,6 +352,24 @@
 </div>
 </footer>
 <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle?.addEventListener('click', () => {
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            mobileMenu.classList.toggle('hidden', isOpen);
+            menuToggle.setAttribute('aria-expanded', String(!isOpen));
+            menuToggle.setAttribute('aria-label', isOpen ? 'Open navigation menu' : 'Close navigation menu');
+        });
+
+        mobileMenu?.querySelectorAll('a').forEach((link) => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuToggle?.setAttribute('aria-expanded', 'false');
+                menuToggle?.setAttribute('aria-label', 'Open navigation menu');
+            });
+        });
+
         // Reveal animations on scroll
         const observerOptions = {
             threshold: 0.1
