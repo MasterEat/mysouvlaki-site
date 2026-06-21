@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About | mysouvlaki.gr - Professional Culinary Logic</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-container": "#7aa8b6",
+                    "on-error": "#ffffff",
+                    "on-tertiary-fixed-variant": "#623f1d",
+                    "on-tertiary-fixed": "#2e1500",
+                    "petrol-dark": "#042B33",
+                    "on-primary-fixed-variant": "#1d4d59",
+                    "secondary-fixed-dim": "#d3c5a5",
+                    "primary-container": "#063d49",
+                    "inverse-surface": "#31312b",
+                    "surface": "#fcf9f1",
+                    "tertiary-container": "#51300f",
+                    "surface-cream": "#F7F4EC",
+                    "on-background": "#1c1c17",
+                    "data-alert": "#A34F4F",
+                    "on-error-container": "#93000a",
+                    "tertiary": "#371b00",
+                    "surface-tint": "#376571",
+                    "on-secondary-fixed": "#221b07",
+                    "surface-variant": "#e5e2da",
+                    "secondary": "#685d43",
+                    "on-primary-fixed": "#001f27",
+                    "on-secondary-container": "#6c6247",
+                    "text-main": "#063D49",
+                    "inverse-on-surface": "#f3f1e9",
+                    "on-surface": "#1c1c17",
+                    "surface-container-high": "#ebe8e0",
+                    "outline-variant": "#c0c8cb",
+                    "surface-container-lowest": "#ffffff",
+                    "background": "#fcf9f1",
+                    "primary-fixed": "#bbeaf9",
+                    "on-secondary-fixed-variant": "#4f462e",
+                    "data-success": "#4A7C59",
+                    "gold-muted": "#C2B391",
+                    "primary": "#00262f",
+                    "surface-container-low": "#f6f3eb",
+                    "on-surface-variant": "#41484b",
+                    "tertiary-fixed": "#ffdcc1",
+                    "primary-fixed-dim": "#a0cedc",
+                    "on-tertiary-container": "#c8976e",
+                    "secondary-container": "#eddebd",
+                    "inverse-primary": "#a0cedc",
+                    "outline": "#71787b",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed": "#f0e1c0",
+                    "surface-dim": "#dcdad2",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#f0bc90",
+                    "surface-container": "#f1eee6",
+                    "surface-container-highest": "#e5e2da",
+                    "surface-bright": "#fcf9f1",
+                    "error": "#ba1a1a",
+                    "on-primary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "section-gap": "64px",
+                    "container-max": "1280px",
+                    "gutter": "24px",
+                    "margin-mobile": "16px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Outfit"],
+                    "headline-md": ["Outfit"],
+                    "headline-lg": ["Outfit"],
+                    "body-md": ["Outfit"],
+                    "headline-lg-mobile": ["Outfit"],
+                    "label-caps": ["Outfit"],
+                    "data-numeral": ["Outfit"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "label-caps": ["12px", {"lineHeight": "1.4", "letterSpacing": "0.08em", "fontWeight": "600"}],
+                    "data-numeral": ["20px", {"lineHeight": "1", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Outfit', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+        .fade-in { animation: fadeIn 0.8s ease-out forwards; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-gutter py-4 bg-surface/95 backdrop-blur-sm border-b border-outline-variant dark:border-outline">
+<div class="flex items-center gap-3">
+<img alt="mysouvlaki logo" class="w-10 h-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAbUTVmOXtnjk5RAMr_xsODiyeFg3mzrUlwyP0NmDCLNb5-PiGKoSAykCwO1aWvre-JJ3ItLnb42PyvM71z_p9chvNzMew_kQE4p45-4ZzQWKHEist4vnSye9GggjhCvq2a_kwoWbdmB01pWOX8wSm8ocd0npbxSI8aBcVwaj_vMvflxioROEBweuQUsdtp8uMVeQEvLcxQo2d1uXZA5hg7LXqkNFjmEXjjt2BeOUf_zv0JrkYxHGE7IRMwph9xk6xsf-LIL3Hd8qQ"/>
+<span class="font-headline-md text-headline-md font-bold text-petrol-dark dark:text-primary-fixed-dim">mysouvlaki.gr</span>
+</div>
+<!-- Desktop Nav -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-text-main font-body-md text-body-md transition-colors" href="#">Home</a>
+<a class="text-text-main dark:text-primary-fixed border-b-2 border-gold-muted pb-1 font-body-md text-body-md" href="#">About</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-text-main font-body-md text-body-md transition-colors" href="#">Food Cost</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-text-main font-body-md text-body-md transition-colors" href="#">Blog</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-text-main font-body-md text-body-md transition-colors" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="font-label-caps text-label-caps border border-gold-muted px-3 py-1 rounded-full text-petrol-dark hover:bg-gold-muted/10 transition-colors uppercase">EN/GR</button>
+<button class="md:hidden text-petrol-dark" onclick="toggleDrawer()">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<!-- Navigation Drawer (Mobile) -->
+<div class="fixed inset-y-0 left-0 z-[60] transform -translate-x-full transition-transform duration-300 ease-in-out bg-surface-cream dark:bg-petrol-dark h-full w-72 shadow-xl" id="drawer">
+<div class="p-6">
+<div class="flex justify-between items-center mb-8">
+<span class="font-headline-md text-headline-md text-petrol-dark">Menu</span>
+<button onclick="toggleDrawer()"><span class="material-symbols-outlined">close</span></button>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-4 text-on-surface-variant dark:text-surface-variant px-4 py-3 hover:bg-surface-container-high rounded-lg" href="#">
+<span class="material-symbols-outlined">home</span> Home
+                </a>
+<a class="flex items-center gap-4 bg-secondary-container text-on-secondary-container rounded-lg px-4 py-3" href="#">
+<span class="material-symbols-outlined">info</span> About
+                </a>
+<a class="flex items-center gap-4 text-on-surface-variant dark:text-surface-variant px-4 py-3 hover:bg-surface-container-high rounded-lg" href="#">
+<span class="material-symbols-outlined">payments</span> Food Cost
+                </a>
+<a class="flex items-center gap-4 text-on-surface-variant dark:text-surface-variant px-4 py-3 hover:bg-surface-container-high rounded-lg" href="#">
+<span class="material-symbols-outlined">article</span> Blog
+                </a>
+<a class="flex items-center gap-4 text-on-surface-variant dark:text-surface-variant px-4 py-3 hover:bg-surface-container-high rounded-lg" href="#">
+<span class="material-symbols-outlined">mail</span> Contact
+                </a>
+</nav>
+</div>
+</div>
+<div class="fixed inset-0 bg-black/20 z-50 hidden backdrop-blur-sm" id="drawer-overlay" onclick="toggleDrawer()"></div>
+<main class="pt-32 pb-section-gap px-gutter max-w-container-max mx-auto">
+<!-- Hero Section -->
+<section class="mb-section-gap fade-in">
+<div class="max-w-3xl">
+<span class="font-label-caps text-label-caps text-gold-muted mb-4 block uppercase tracking-widest">A Professional Culinary Logic Project</span>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-petrol-dark mb-6 leading-tight">
+                    Transforming Tradition into a High-Yield Enterprise.
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
+                    mysouvlaki.gr is the intersection of Greek culinary heritage and rigorous business strategy. We empower restaurant owners to master the complexity of the modern food industry through data-driven costing, profitability analysis, and operational precision.
+                </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-petrol-dark text-surface-cream font-body-md text-body-md px-8 py-3 rounded-lg hover:opacity-90 transition-opacity">Explore Tools</button>
+<button class="border border-gold-muted text-petrol-dark font-body-md text-body-md px-8 py-3 rounded-lg hover:bg-gold-muted/5 transition-colors">Contact Consultant</button>
+</div>
+</div>
+</section>
+<!-- Bento Grid Insights -->
+<section class="bento-grid mb-section-gap">
+<!-- Strategic Costing -->
+<div class="col-span-12 md:col-span-8 bg-surface-cream p-8 rounded-xl border border-outline-variant/30 flex flex-col justify-between min-h-[400px]">
+<div>
+<span class="material-symbols-outlined text-petrol-dark text-4xl mb-4">calculate</span>
+<h3 class="font-headline-md text-headline-md text-petrol-dark mb-4">Precision Costing Analysis</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+                        We move beyond estimates. Our methodology involves detailed ingredient-level analysis, waste tracking, and dynamic pricing strategies that protect your margins against inflation and market volatility.
+                    </p>
+</div>
+<div class="mt-8 overflow-hidden rounded-lg">
+<img class="w-full h-48 object-cover" data-alt="A clean, professional macro photograph of high-quality greek ingredients like oregano, coarse salt, and olive oil on a white minimalist marble surface. The lighting is bright and high-key, conveying a sense of culinary purity and corporate precision. The color palette is dominated by off-whites, light greys, and deep petrol green accents, reflecting a modern light-mode dashboard aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLfjWPTCD-0ThTg3sdHO6e_d0AyGAq7N0kJwTKcqTvZAaT_7dLk4O8KR3gCLRA7fQWAdMUy8pz9Ursl4CjTHi8_LZ9pdKCoqI4RfmdDHxR2B8j1RZX2ZMhLt-2tfct0ySDK1hFXw_d8iQY2Om8VhKUuw3XqZFoAAUo5c6QkewleXMBqXhLhJxct5PgeGMnBnZWDPtPaELXxSRqBLswqFTMc4TWclcOW-TF4B0nZ3wSxIBG-KsyVcpaHS_EJXLcxNo5jWu1XtmC-SOB"/>
+</div>
+</div>
+<!-- Profitability Badge -->
+<div class="col-span-12 md:col-span-4 bg-petrol-dark p-8 rounded-xl flex flex-col justify-center items-center text-center">
+<span class="font-label-caps text-label-caps text-gold-muted mb-2 uppercase">Core Metric</span>
+<div class="font-headline-lg text-headline-lg text-surface-cream mb-2">+24%</div>
+<p class="font-body-md text-body-md text-surface-variant/80">Average Profit Increase for Partner Establishments</p>
+</div>
+<!-- Greek Heritage -->
+<div class="col-span-12 md:col-span-4 bg-surface-container-low p-8 rounded-xl border border-outline-variant/30">
+<h4 class="font-headline-md text-headline-md text-petrol-dark mb-4">Culture &amp; Heritage</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                    Souvlaki is not just food; it is a cultural anchor. We preserve the soul of the traditional grill-house while modernizing the back-office.
+                </p>
+</div>
+<!-- Data Driven -->
+<div class="col-span-12 md:col-span-8 bg-white p-8 rounded-xl border border-outline-variant/30 relative overflow-hidden">
+<div class="relative z-10">
+<h4 class="font-headline-md text-headline-md text-petrol-dark mb-4">Modern Layout &amp; Business Logic</h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<div class="flex items-center gap-2 text-data-success">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+<span class="font-label-caps text-label-caps uppercase">Inventory Control</span>
+</div>
+<div class="flex items-center gap-2 text-data-success">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+<span class="font-label-caps text-label-caps uppercase">Yield Optimization</span>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex items-center gap-2 text-data-success">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+<span class="font-label-caps text-label-caps uppercase">Labor Logic</span>
+</div>
+<div class="flex items-center gap-2 text-data-success">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+<span class="font-label-caps text-label-caps uppercase">Menu Engineering</span>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute right-[-10%] bottom-[-20%] opacity-10">
+<span class="material-symbols-outlined text-[200px] text-petrol-dark">bar_chart</span>
+</div>
+</div>
+</section>
+<!-- Dual Content Section (Bilingual) -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-16 py-12 border-t border-outline-variant/50">
+<div>
+<h2 class="font-headline-md text-headline-md text-petrol-dark mb-6">Our Mission</h2>
+<div class="space-y-6">
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        To provide a professional framework for the most iconic Greek street food. We believe that professional management doesn't strip away flavor—it secures the future of culinary traditions. By applying high-end business logic to the humble souvlaki shop, we ensure sustainability and growth in a competitive global market.
+                    </p>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Our platform serves as a resource for established restaurateurs and new entrepreneurs alike, offering templates, calculators, and deep-dive insights into the "mechanics" of the grill.
+                    </p>
+</div>
+</div>
+<div class="bg-surface-container/50 p-8 rounded-xl italic">
+<h2 class="font-headline-md text-headline-md text-petrol-dark mb-6">Η Αποστολή μας</h2>
+<div class="space-y-6">
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Παρέχουμε ένα επαγγελματικό πλαίσιο για το πιο εμβληματικό ελληνικό φαγητό. Πιστεύουμε ότι η επαγγελματική διαχείριση δεν αφαιρεί τη γεύση — εξασφαλίζει το μέλλον των γαστρονομικών παραδόσεων. Εφαρμόζοντας υψηλού επιπέδου επιχειρηματική λογική στο παραδοσιακό σουβλατζίδικο, διασφαλίζουμε τη βιωσιμότητα και την ανάπτυξη σε μια ανταγωνιστική παγκόσμια αγορά.
+                    </p>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Η πλατφόρμα μας αποτελεί πηγή πληροφόρησης για έμπειρους εστιάτορες και νέους επιχειρηματίες, προσφέροντας εργαλεία κοστολόγησης και βαθιά γνώση για τους «μηχανισμούς» της ψησταριάς.
+                    </p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-petrol-dark text-surface-cream w-full py-section-gap px-gutter border-t border-primary-container">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-base">
+<div>
+<span class="font-headline-md text-headline-md text-surface-cream block mb-2">mysouvlaki.gr</span>
+<p class="font-body-md text-body-md text-surface-variant/80">© 2024 mysouvlaki.gr - Professional Culinary Logic</p>
+</div>
+<nav class="flex flex-wrap gap-x-8 gap-y-4">
+<a class="text-surface-variant/80 hover:text-surface-cream font-body-md text-body-md transition-colors" href="#">Home</a>
+<a class="text-gold-muted font-bold font-body-md text-body-md" href="#">About</a>
+<a class="text-surface-variant/80 hover:text-surface-cream font-body-md text-body-md transition-colors" href="#">Food Cost</a>
+<a class="text-surface-variant/80 hover:text-surface-cream font-body-md text-body-md transition-colors" href="#">Blog</a>
+<a class="text-surface-variant/80 hover:text-surface-cream font-body-md text-body-md transition-colors" href="#">Contact</a>
+<a class="text-surface-variant/80 hover:text-surface-cream font-body-md text-body-md transition-colors" href="#">Privacy Policy</a>
+</nav>
+</div>
+</footer>
+<script>
+        function toggleDrawer() {
+            const drawer = document.getElementById('drawer');
+            const overlay = document.getElementById('drawer-overlay');
+            const isOpen = drawer.style.transform === 'translateX(0%)';
+            
+            if (isOpen) {
+                drawer.style.transform = 'translateX(-100%)';
+                overlay.classList.add('hidden');
+            } else {
+                drawer.style.transform = 'translateX(0%)';
+                overlay.classList.remove('hidden');
+            }
+        }
+
+        // Initialize animations on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            observer.observe(section);
+        });
+    </script>
+</body></html>
