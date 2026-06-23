@@ -126,6 +126,7 @@
   </style>
   <style>.language-switch button{cursor:pointer}.language-switch button.active{background:#042B33;color:#F7F4EC;font-weight:700}.language-switch button:focus-visible{outline:2px solid #C2B391;outline-offset:2px}</style>
 <script src="assets/js/i18n.js" defer></script>
+<script src="assets/js/mobile-nav.js" defer></script>
 <style>
   [data-fs-success]:not([data-fs-active]),
   [data-fs-error=""]:not([data-fs-active]) {
@@ -152,41 +153,24 @@
 <a data-i18n="nav.blog" class="font-body-md text-body-md text-on-surface-variant hover:text-text-main px-4" href="blog.html">Blog</a>
 <a data-i18n="nav.contact" class="font-body-md text-body-md text-text-main border-b-2 border-gold-muted pb-1 px-4" href="contact.html">Επικοινωνία</a>
 </nav>
-<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 md:gap-4">
 <div class="language-switch font-label-caps text-label-caps text-petrol-dark border border-petrol-dark/20 rounded-full overflow-hidden" role="group" aria-label="Language selection"><button type="button" data-lang="el" aria-label="Switch language to Greek" aria-pressed="true" class="px-3 py-1 cursor-pointer font-bold">GR</button><button type="button" data-lang="en" aria-label="Switch language to English" aria-pressed="false" class="px-3 py-1 cursor-pointer">EN</button></div>
-<button class="md:hidden flex items-center" id="menu-toggle">
-<span class="material-symbols-outlined text-text-main" data-icon="menu">menu</span>
-</button>
+<button type="button" class="mobile-menu-toggle md:hidden inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full text-petrol-dark hover:bg-surface-container-high focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-muted" aria-controls="mobile-navigation" aria-expanded="false" aria-label="Άνοιγμα μενού" data-i18n-aria-label="mobile.openMenu"><span class="material-symbols-outlined" aria-hidden="true">menu</span></button>
 </div>
 </header>
-<!-- Navigation Drawer (Mobile) -->
-<div class="fixed inset-0 bg-black/50 z-[60] hidden transition-opacity duration-300" id="drawer-overlay"></div>
-<aside class="fixed inset-y-0 left-0 z-[70] transform -translate-x-full transition-transform duration-300 ease-in-out h-full w-72 bg-surface-cream dark:bg-petrol-dark shadow-xl" id="nav-drawer">
-<div class="p-gutter flex flex-col h-full">
-<div class="flex justify-between items-center mb-section-gap">
-<span class="font-headline-md text-headline-md text-petrol-dark">Μενού</span>
-<button id="drawer-close">
-<span class="material-symbols-outlined" data-icon="close">close</span>
-</button>
+<div class="fixed inset-0 z-[60] hidden bg-black/50 opacity-0 transition-opacity duration-300 md:hidden" id="mobile-menu-overlay" aria-hidden="true"></div>
+<aside class="fixed inset-y-0 left-0 z-[70] flex h-dvh w-72 max-w-[85vw] -translate-x-full flex-col bg-surface-cream shadow-xl transition-transform duration-300 ease-in-out md:hidden" id="mobile-navigation" aria-label="Mobile navigation" aria-hidden="true">
+<div class="flex items-center justify-between border-b border-outline-variant/30 p-6">
+<h2 class="font-headline-md text-headline-md text-petrol-dark" data-i18n="mobile.menuTitle">Μενού</h2>
+<button type="button" class="mobile-menu-close inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full text-petrol-dark hover:bg-surface-container-high focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-muted" aria-label="Κλείσιμο μενού" data-i18n-aria-label="mobile.closeMenu"><span class="material-symbols-outlined" aria-hidden="true">close</span></button>
 </div>
-<div class="flex flex-col gap-2">
-<a data-i18n="nav.home" class="font-body-lg text-body-lg text-on-surface-variant px-4 py-3 hover:bg-surface-container-high rounded-lg transition-colors flex items-center gap-4" href="index.html">
-<span class="material-symbols-outlined" data-icon="home">home</span> Αρχική
-                </a>
-<a data-i18n="nav.about" class="font-body-lg text-body-lg text-on-surface-variant px-4 py-3 hover:bg-surface-container-high rounded-lg transition-colors flex items-center gap-4" href="about.html">
-<span class="material-symbols-outlined" data-icon="info">info</span> Σχετικά
-                </a>
-<a data-i18n="nav.foodCost" class="font-body-lg text-body-lg text-on-surface-variant px-4 py-3 hover:bg-surface-container-high rounded-lg transition-colors flex items-center gap-4" href="foodcost.html">
-<span class="material-symbols-outlined" data-icon="payments">payments</span> Food Cost
-                </a>
-<a data-i18n="nav.blog" class="font-body-lg text-body-lg text-on-surface-variant px-4 py-3 hover:bg-surface-container-high rounded-lg transition-colors flex items-center gap-4" href="blog.html">
-<span class="material-symbols-outlined" data-icon="article">article</span> Blog
-                </a>
-<a data-i18n="nav.contact" class="font-body-lg text-body-lg bg-secondary-container text-on-secondary-container rounded-lg px-4 py-3 flex items-center gap-4" href="contact.html">
-<span class="material-symbols-outlined" data-icon="mail" style="font-variation-settings: 'FILL' 1;">mail</span> Επικοινωνία
-                </a>
-</div>
-</div>
+<nav class="flex flex-1 flex-col gap-2 p-4">
+<a class="mobile-nav-link flex items-center gap-4 px-4 py-3 rounded-lg font-body-lg text-body-lg transition-colors text-on-surface-variant hover:bg-surface-container-high" href="index.html"><span class="material-symbols-outlined" aria-hidden="true">home</span><span data-i18n="nav.home">Αρχική</span></a>
+<a class="mobile-nav-link flex items-center gap-4 px-4 py-3 rounded-lg font-body-lg text-body-lg transition-colors text-on-surface-variant hover:bg-surface-container-high" href="about.html"><span class="material-symbols-outlined" aria-hidden="true">info</span><span data-i18n="nav.about">Σχετικά</span></a>
+<a class="mobile-nav-link flex items-center gap-4 px-4 py-3 rounded-lg font-body-lg text-body-lg transition-colors text-on-surface-variant hover:bg-surface-container-high" href="foodcost.html"><span class="material-symbols-outlined" aria-hidden="true">payments</span><span data-i18n="nav.foodCost">Food Cost</span></a>
+<a class="mobile-nav-link flex items-center gap-4 px-4 py-3 rounded-lg font-body-lg text-body-lg transition-colors text-on-surface-variant hover:bg-surface-container-high" href="blog.html"><span class="material-symbols-outlined" aria-hidden="true">article</span><span data-i18n="nav.blog">Blog</span></a>
+<a class="mobile-nav-link flex items-center gap-4 px-4 py-3 rounded-lg font-body-lg text-body-lg bg-secondary-container text-on-secondary-container" href="contact.html" aria-current="page"><span class="material-symbols-outlined" aria-hidden="true">mail</span><span data-i18n="nav.contact">Επικοινωνία</span></a>
+</nav>
 </aside>
 <main class="flex-grow pt-32 pb-section-gap px-gutter max-w-container-max mx-auto w-full">
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-section-gap">
@@ -321,30 +305,6 @@
 </div>
 </div>
 </footer>
-<script>
-        const menuToggle = document.getElementById('menu-toggle');
-        const drawer = document.getElementById('nav-drawer');
-        const overlay = document.getElementById('drawer-overlay');
-        const drawerClose = document.getElementById('drawer-close');
-
-        function openDrawer() {
-            drawer.classList.remove('-translate-x-full');
-            overlay.classList.remove('hidden');
-            setTimeout(() => overlay.classList.add('opacity-100'), 10);
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeDrawer() {
-            drawer.classList.add('-translate-x-full');
-            overlay.classList.remove('opacity-100');
-            setTimeout(() => overlay.classList.add('hidden'), 300);
-            document.body.style.overflow = 'auto';
-        }
-
-        menuToggle.addEventListener('click', openDrawer);
-        drawerClose.addEventListener('click', closeDrawer);
-        overlay.addEventListener('click', closeDrawer);
-    </script>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('#contact-form');
