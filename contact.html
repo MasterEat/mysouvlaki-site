@@ -126,6 +126,17 @@
   </style>
   <style>.language-switch button{cursor:pointer}.language-switch button.active{background:#042B33;color:#F7F4EC;font-weight:700}.language-switch button:focus-visible{outline:2px solid #C2B391;outline-offset:2px}</style>
 <script src="assets/js/i18n.js" defer></script>
+<style>
+  [data-fs-success]:not([data-fs-active]),
+  [data-fs-error=""]:not([data-fs-active]) {
+    display: none;
+  }
+
+  [data-fs-success][data-fs-active],
+  [data-fs-error=""][data-fs-active] {
+    display: block;
+  }
+</style>
 </head>
 <body class="flex flex-col min-h-screen overflow-x-hidden">
 <!-- TopAppBar -->
@@ -214,8 +225,8 @@
 <div class="bg-surface-cream border border-outline-variant p-gutter rounded-xl shadow-sm relative overflow-hidden">
 <!-- Subtle background decoration -->
 <div class="absolute top-0 right-0 w-32 h-32 bg-gold-muted/5 rounded-full -mr-16 -mt-16"></div>
-<div data-fs-success role="status" aria-live="polite" class="hidden relative z-10 mb-6 rounded-lg border border-data-success/40 bg-data-success/10 p-4 font-body-md text-body-md text-petrol-dark" data-i18n="contact.form.success">Το μήνυμά σας στάλθηκε επιτυχώς. Θα επικοινωνήσουμε μαζί σας το συντομότερο δυνατό.</div>
-<div data-fs-error role="alert" aria-live="assertive" class="hidden relative z-10 mb-6 rounded-lg border border-data-alert/40 bg-data-alert/10 p-4 font-body-md text-body-md text-on-error-container" data-i18n="contact.form.error">Δεν ήταν δυνατή η αποστολή του μηνύματος. Ελέγξτε τα πεδία και δοκιμάστε ξανά.</div>
+<div data-fs-success role="status" aria-live="polite" class="relative z-10 mb-6 rounded-lg border border-data-success/40 bg-data-success/10 p-4 font-body-md text-body-md text-petrol-dark" data-i18n="contact.form.success">Το μήνυμά σας στάλθηκε επιτυχώς. Θα επικοινωνήσουμε μαζί σας το συντομότερο δυνατό.</div>
+<div data-fs-error role="alert" aria-live="assertive" class="relative z-10 mb-6 rounded-lg border border-data-alert/40 bg-data-alert/10 p-4 font-body-md text-body-md text-on-error-container" data-i18n="contact.form.error">Δεν ήταν δυνατή η αποστολή του μηνύματος. Ελέγξτε τα πεδία και δοκιμάστε ξανά.</div>
 <form id="contact-form" action="https://formspree.io/f/mdarnrpr" method="POST" class="relative z-10 flex flex-col gap-6">
 <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" class="hidden"/>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
